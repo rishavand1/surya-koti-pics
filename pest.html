@@ -1,0 +1,1597 @@
+CTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Surya Koti Pest Control Services — Bihar's Trusted Pest Control</title>
+<meta name="description" content="Surya Koti Pest Control Services — licensed termite, cockroach, mosquito, rodent, bed bug and godown pest control across Bihar. Free inspection, same-day booking.">
+ 
+<!-- ===================== FONTS ===================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+ 
+<!-- ===================== THREE.JS (hero particles) ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+ 
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --ink:        #0F1B14;
+  --pine:       #0F1B14;
+  --pine-2:     #16261C;
+  --pine-3:     #1D3327;
+  --moss:       #2E4A3A;
+  --moss-soft:  #3E5F4B;
+  --paper:      #F3EFE0;
+  --paper-dim:  #E7E0C9;
+  --amber:      #F2B705;
+  --amber-2:    #FFD23F;
+  --ember:      #C1440E;
+  --line:       rgba(243,239,224,0.14);
+ 
+  --display: 'Big Shoulders Display', sans-serif;
+  --body:    'Work Sans', sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+ 
+  --container: 1180px;
+  --radius: 14px;
+  --ease: cubic-bezier(.16,.84,.44,1);
+}
+ 
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background: var(--pine);
+  color: var(--paper);
+  font-family: var(--body);
+  line-height:1.55;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+input,select,textarea{ font-family:inherit; font-size:1rem; }
+::selection{ background:var(--amber); color:var(--ink); }
+ 
+.wrap{ max-width:var(--container); margin:0 auto; padding:0 28px; }
+.eyebrow{
+  font-family:var(--mono); text-transform:uppercase; letter-spacing:.14em;
+  font-size:.72rem; color:var(--amber); display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{ content:""; width:22px; height:1px; background:var(--amber); display:inline-block; }
+h1,h2,h3{ font-family:var(--display); text-transform:uppercase; line-height:0.96; letter-spacing:.01em; }
+h2{ font-size:clamp(2.1rem,4.4vw,3.4rem); font-weight:800; }
+h3{ font-size:1.35rem; font-weight:700; }
+p{ color:rgba(243,239,224,0.72); }
+.section{ padding:110px 0; position:relative; }
+.section-head{ max-width:680px; margin-bottom:56px; }
+.section-head h2{ margin-top:14px; }
+.section-head p{ margin-top:16px; font-size:1.05rem; }
+ 
+/* reveal-on-scroll */
+.reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+.reveal.in{ opacity:1; transform:translateY(0); }
+ 
+/* ============================================================
+   MADHUBANI-HAZARD SIGNATURE DIVIDER
+   A hand-drawn Mithila fish-eye motif fused with a hazard chevron —
+   used as the site's recurring signature between sections.
+   ============================================================ */
+.mh-divider{ width:100%; height:34px; overflow:hidden; opacity:.9; }
+.mh-divider svg{ width:100%; height:100%; display:block; }
+ 
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:rgba(15,27,20,0.72); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  transition:background .3s;
+}
+.nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:78px; }
+.brand{ display:flex; align-items:center; gap:12px; }
+.brand-mark{ width:40px; height:40px; flex:none; object-fit:cover; border-radius:8px; }
+.brand-text{ font-family:var(--display); font-weight:800; text-transform:uppercase; font-size:1.02rem; letter-spacing:.02em; line-height:1; }
+.brand-text span{ display:block; font-family:var(--mono); font-size:.6rem; letter-spacing:.16em; color:var(--amber); text-transform:uppercase; margin-top:4px; }
+.nav-links{ display:flex; gap:34px; align-items:center; }
+.nav-links a{ font-size:.86rem; text-transform:uppercase; letter-spacing:.06em; color:rgba(243,239,224,.75); transition:color .2s; position:relative; }
+.nav-links a:hover{ color:var(--amber); }
+.nav-cta{ display:flex; gap:10px; align-items:center; }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:13px 24px; border-radius:999px; font-weight:700; font-size:.86rem;
+  text-transform:uppercase; letter-spacing:.05em; transition:transform .25s var(--ease), box-shadow .25s var(--ease), background .25s;
+  white-space:nowrap;
+}
+.btn-amber{ background:var(--amber); color:var(--ink); box-shadow:0 0 0 0 rgba(242,183,5,.5); }
+.btn-amber:hover{ transform:translateY(-2px); box-shadow:0 10px 26px -8px rgba(242,183,5,.6); }
+.btn-ghost{ border:1px solid rgba(243,239,224,.3); color:var(--paper); }
+.btn-ghost:hover{ border-color:var(--amber); color:var(--amber); }
+.btn-wa{ background:#25D366; color:#062611; }
+.btn-wa:hover{ transform:translateY(-2px); box-shadow:0 10px 26px -8px rgba(37,211,102,.55); }
+.btn-sm{ padding:10px 18px; font-size:.76rem; }
+.nav-toggle{ display:none; width:34px; height:34px; }
+.nav-toggle span{ display:block; width:24px; height:2px; background:var(--paper); margin:6px auto; transition:.25s; }
+ 
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  position:relative; min-height:100svh; display:flex; align-items:center;
+  padding-top:78px; overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 78% 18%, rgba(46,74,58,0.55), transparent 60%),
+    linear-gradient(180deg,#0F1B14 0%, #0F1B14 60%, #0C1712 100%);
+}
+#hero-canvas{ position:absolute; inset:0; z-index:1; opacity:.75; pointer-events:none; }
+.hero-grid-lines{
+  position:absolute; inset:0; z-index:1; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(243,239,224,.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243,239,224,.045) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 70% at 60% 40%, black, transparent 75%);
+}
+.hero .wrap{ position:relative; z-index:2; display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center; width:100%; }
+.hero-copy .eyebrow{ margin-bottom:22px; }
+.hero-copy h1{
+  font-size:clamp(2.8rem,6.2vw,5.1rem); font-weight:900; color:var(--paper);
+}
+.hero-copy h1 em{ font-style:normal; color:var(--amber); }
+.hero-copy .lede{ margin-top:24px; font-size:1.12rem; max-width:520px; color:rgba(243,239,224,.78); }
+.hero-actions{ display:flex; flex-wrap:wrap; gap:14px; margin-top:36px; }
+.hero-badges{ display:flex; gap:28px; margin-top:36px; flex-wrap:wrap; }
+.hero-badge{ display:flex; align-items:center; gap:10px; }
+.hours-badge{
+  display:inline-flex; align-items:center; gap:16px; margin-top:34px;
+  padding:14px 26px 14px 20px; border-radius:16px;
+  background:linear-gradient(135deg, rgba(242,183,5,.14), rgba(242,183,5,.04));
+  border:1.5px solid rgba(242,183,5,.55);
+  box-shadow:0 0 0 0 rgba(242,183,5,.3);
+  animation:hoursGlow 2.6s ease-in-out infinite;
+}
+@keyframes hoursGlow{
+  0%,100%{ box-shadow:0 0 0 0 rgba(242,183,5,.22); }
+  50%{ box-shadow:0 0 26px 4px rgba(242,183,5,.22); }
+}
+.hours-badge-num{
+  font-family:var(--display); font-weight:900; font-size:2.6rem; line-height:1;
+  color:var(--amber); letter-spacing:.01em;
+}
+.hours-badge-txt{
+  font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.05em;
+  color:rgba(243,239,224,.8); line-height:1.5;
+}
+@media (max-width:720px){
+  .hours-badge{ padding:12px 20px 12px 16px; gap:12px; }
+  .hours-badge-num{ font-size:2.1rem; }
+}
+.hero-badge svg{ width:26px; height:26px; flex:none; color:var(--amber); }
+.hero-badge span{ font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:rgba(243,239,224,.65); }
+ 
+/* 3D rotating shield badge */
+.hero-stage{ position:relative; height:460px; display:flex; align-items:center; justify-content:center; perspective:1200px; }
+.badge-3d{
+  position:relative; width:300px; height:300px; transform-style:preserve-3d;
+  animation:spin3d 16s linear infinite;
+}
+@keyframes spin3d{ from{ transform:rotateY(0deg) rotateX(8deg);} to{ transform:rotateY(360deg) rotateX(8deg);} }
+.badge-face{
+  position:absolute; inset:0; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  backface-visibility:hidden;
+}
+.badge-face.front{
+  background:radial-gradient(circle at 32% 28%, #2E4A3A, #16261C 68%);
+  border:2px solid rgba(242,183,5,.5);
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.7), inset 0 0 60px rgba(242,183,5,.08);
+}
+.badge-face.back{ transform:rotateY(180deg); background:linear-gradient(160deg,#16261C,#0F1B14); border:2px solid rgba(242,183,5,.25); }
+.badge-ring{ position:absolute; inset:-18px; border-radius:50%; border:1px dashed rgba(242,183,5,.35); animation:spinReverse 30s linear infinite; }
+@keyframes spinReverse{ from{ transform:rotate(360deg);} to{ transform:rotate(0deg);} }
+.badge-face svg{ width:56%; height:56%; color:var(--amber); }
+.hero-stage-orbit{
+  position:absolute; width:14px; height:14px; border-radius:50%; background:var(--amber);
+  box-shadow:0 0 18px 4px rgba(242,183,5,.6);
+  animation:orbit 6s linear infinite;
+}
+.hero-stage-orbit.b{ animation-duration:9s; animation-direction:reverse; background:var(--ember); box-shadow:0 0 18px 4px rgba(193,68,14,.6); }
+@keyframes orbit{
+  from{ transform:rotate(0deg) translateX(190px) rotate(0deg); }
+  to{ transform:rotate(360deg) translateX(190px) rotate(-360deg); }
+}
+ 
+/* ============================================================
+   DISTRICT MARQUEE — hazard-stripe ticker
+   ============================================================ */
+.marquee-strip{
+  position:relative; z-index:3; background:var(--amber); color:var(--ink);
+  overflow:hidden; padding:14px 0;
+  background-image:repeating-linear-gradient(-45deg, rgba(15,27,20,.08) 0 14px, transparent 14px 28px);
+}
+.marquee-track{ display:flex; width:max-content; animation:marquee 34s linear infinite; }
+.marquee-track span{
+  font-family:var(--mono); font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  font-size:.86rem; padding:0 26px; white-space:nowrap; display:flex; align-items:center; gap:10px;
+}
+.marquee-track span::after{ content:"◆"; opacity:.5; font-size:.6rem; margin-left:26px; }
+@keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+ 
+/* ============================================================
+   SITE-WIDE PEST HUNT — fixed overlay + HUD
+   ============================================================ */
+#bug-hunt-canvas{
+  position:fixed; inset:0; width:100vw; height:100vh;
+  z-index:70; pointer-events:none;
+}
+.bug-hud{
+  position:fixed; top:92px; right:18px; z-index:71;
+  display:flex; flex-direction:column; align-items:flex-end; gap:8px;
+  pointer-events:none;
+}
+.bug-hud-badge{
+  font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.06em;
+  color:rgba(243,239,224,.88); background:rgba(15,27,20,.72); border:1px solid rgba(242,183,5,.4);
+  padding:9px 16px; border-radius:999px; backdrop-filter:blur(8px);
+  display:flex; align-items:center; gap:8px; white-space:nowrap;
+}
+.bug-hunt-toggle{
+  background:rgba(243,239,224,0.04); color:var(--paper); border:1px solid rgba(243,239,224,0.06);
+  padding:8px 10px; border-radius:8px; font-family:var(--mono); font-size:.72rem; cursor:pointer;
+}
+.bug-hunt-toggle:hover{ background:rgba(242,183,5,0.06); }
+.bug-hud-badge strong{ color:var(--amber); }
+.bug-hunt-hint{ transition:opacity .5s, transform .5s; animation:hintPulse 2.2s ease-in-out infinite; }
+.bug-hunt-hint.hide{ opacity:0; transform:translateY(-8px); pointer-events:none; }
+@media (max-width:720px){ .bug-hud{ top:86px; right:12px; } .bug-hud-badge{ font-size:.62rem; padding:7px 12px; } }
+ 
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.svc-card{
+  position:relative; background:var(--pine-2); border:1px solid var(--line); border-radius:var(--radius);
+  padding:34px 28px; transform-style:preserve-3d; transition:transform .12s linear, border-color .3s;
+  will-change:transform;
+}
+.svc-card:hover{ border-color:rgba(242,183,5,.4); }
+.svc-card::before{
+  content:""; position:absolute; top:0; left:28px; right:28px; height:2px;
+  background:linear-gradient(90deg,var(--amber),transparent);
+  transform:scaleX(0); transform-origin:left; transition:transform .35s var(--ease);
+}
+.svc-card:hover::before{ transform:scaleX(1); }
+.svc-icon{
+  width:52px; height:52px; border-radius:12px; background:rgba(242,183,5,.1);
+  display:flex; align-items:center; justify-content:center; margin-bottom:22px;
+  transform:translateZ(28px);
+}
+.svc-icon svg{ width:26px; height:26px; color:var(--amber); }
+.svc-card h3{ transform:translateZ(18px); }
+.svc-card p{ margin-top:10px; font-size:.92rem; transform:translateZ(14px); }
+.svc-card .svc-tag{
+  margin-top:20px; display:inline-block; font-family:var(--mono); font-size:.7rem;
+  text-transform:uppercase; letter-spacing:.08em; color:var(--ember); transform:translateZ(14px);
+}
+ 
+/* ============================================================
+   PROCESS (real sequence — numbering justified)
+   ============================================================ */
+.process{ display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; }
+.process::before{
+  content:""; position:absolute; top:26px; left:6%; right:6%; height:1px;
+  background:repeating-linear-gradient(90deg, rgba(242,183,5,.4) 0 10px, transparent 10px 20px);
+  z-index:0;
+}
+.p-step{ position:relative; padding:0 18px; text-align:left; }
+.p-num{
+  font-family:var(--mono); font-size:1.1rem; font-weight:700; color:var(--ink); background:var(--amber);
+  width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  position:relative; z-index:1; margin-bottom:20px;
+}
+.p-step h3{ font-size:1.15rem; }
+.p-step p{ margin-top:8px; font-size:.9rem; }
+ 
+/* ============================================================
+   STATS
+   ============================================================ */
+.stats-band{ background:var(--pine-3); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.stats-grid{ display:grid; grid-template-columns:repeat(4,1fr); }
+.stat{ padding:52px 24px; text-align:center; border-left:1px solid var(--line); }
+.stat:first-child{ border-left:none; }
+.stat .num{ font-family:var(--mono); font-size:clamp(2.1rem,4vw,3rem); font-weight:700; color:var(--amber); }
+.stat .lbl{ margin-top:8px; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:rgba(243,239,224,.6); }
+ 
+/* ============================================================
+   COVERAGE (districts)
+   ============================================================ */
+.coverage-wrap{ display:grid; grid-template-columns:.9fr 1.1fr; gap:60px; align-items:center; }
+.district-chips{ display:flex; flex-wrap:wrap; gap:10px; }
+.chip{
+  font-family:var(--mono); font-size:.78rem; padding:9px 16px; border-radius:999px;
+  border:1px solid var(--line); color:rgba(243,239,224,.8); transition:.25s;
+}
+.chip:hover{ border-color:var(--amber); color:var(--amber); transform:translateY(-2px); }
+.map-motif{ position:relative; aspect-ratio:1/1; max-width:420px; }
+.map-motif svg{ width:100%; height:100%; }
+.map-pulse{ position:absolute; width:10px; height:10px; border-radius:50%; background:var(--amber); }
+.map-pulse::after{
+  content:""; position:absolute; inset:-8px; border-radius:50%; border:1px solid var(--amber);
+  animation:pulse 2.2s ease-out infinite;
+}
+.map-pulse-label{
+  position:absolute; top:-22px; left:50%; transform:translateX(-50%);
+  background:var(--pine-2); color:var(--paper); padding:6px 8px; border-radius:8px; font-family:var(--mono);
+  font-size:.72rem; white-space:nowrap; border:1px solid var(--line); pointer-events:none;
+}
+@media (max-width:720px){ .map-pulse-label{ display:none; } }
+@keyframes pulse{ 0%{ transform:scale(.4); opacity:1;} 100%{ transform:scale(2.4); opacity:0;} }
+ 
+/* ============================================================
+   WHY US
+   ============================================================ */
+.why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+.why-list{ display:flex; flex-direction:column; gap:0; }
+.why-item{ display:flex; gap:20px; padding:24px 0; border-bottom:1px solid var(--line); }
+.why-item:first-child{ padding-top:0; }
+.why-item svg{ width:26px; height:26px; color:var(--amber); flex:none; margin-top:2px; }
+.why-item h3{ font-size:1.08rem; text-transform:none; font-family:var(--body); font-weight:700; }
+.why-item p{ margin-top:6px; font-size:.9rem; }
+ 
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testi-track{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.testi-card{
+  background:var(--pine-2); border:1px solid var(--line); border-radius:var(--radius); padding:30px;
+  display:flex; flex-direction:column; gap:18px;
+}
+.stars{ display:flex; gap:4px; }
+.stars svg{ width:16px; height:16px; color:var(--amber); }
+.testi-card p{ font-size:.95rem; color:rgba(243,239,224,.82); }
+.testi-who{ display:flex; align-items:center; gap:12px; margin-top:auto; }
+.testi-avatar{
+  width:38px; height:38px; border-radius:50%; background:var(--moss); display:flex; align-items:center;
+  justify-content:center; font-family:var(--display); font-weight:700; font-size:.95rem; color:var(--amber);
+}
+.testi-who span{ display:block; font-size:.78rem; color:rgba(243,239,224,.55); font-family:var(--mono); }
+ 
+/* ============================================================
+   GALLERY
+   ============================================================ */
+.gallery-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.gallery-item{
+  position:relative; border-radius:var(--radius); overflow:hidden; aspect-ratio:3/4;
+  border:1px solid var(--line); background:var(--pine-2);
+  transform-style:preserve-3d; transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.gallery-item img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s var(--ease); }
+.gallery-item:hover{ transform:translateY(-8px) rotateX(4deg); box-shadow:0 24px 50px -18px rgba(0,0,0,.6); }
+.gallery-item:hover img{ transform:scale(1.08); }
+.gallery-caption{
+  position:absolute; left:0; right:0; bottom:0; padding:16px 14px 12px;
+  background:linear-gradient(0deg, rgba(15,27,20,.92), transparent);
+  font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.05em;
+  color:var(--paper);
+}
+@media (max-width:980px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:520px){ .gallery-grid{ grid-template-columns:1fr 1fr; gap:12px; } }
+ 
+/* ============================================================
+   CLIENTS
+   ============================================================ */
+.clients-strip{ display:flex; flex-wrap:wrap; gap:14px; }
+.client-chip{
+  display:flex; align-items:center; gap:10px; padding:14px 22px; border-radius:12px;
+  background:var(--pine-2); border:1px solid var(--line); font-size:.9rem; font-weight:600;
+  transition:border-color .25s, transform .25s;
+}
+.client-chip:hover{ border-color:rgba(242,183,5,.45); transform:translateY(-3px); }
+.client-chip svg{ width:18px; height:18px; color:var(--amber); flex:none; }
+ 
+/* ============================================================
+   MAP / LOCATION
+   ============================================================ */
+.map-section{ display:grid; grid-template-columns:1fr 1fr; gap:0; border-radius:28px; overflow:hidden; margin:0 28px; border:1px solid var(--line); }
+.map-info{ padding:56px 48px; background:var(--pine-2); }
+.map-info h3{ font-size:1.4rem; text-transform:none; font-family:var(--body); font-weight:700; margin-top:14px; }
+.map-info-row{ display:flex; gap:14px; margin-top:22px; align-items:flex-start; }
+.map-info-row svg{ width:20px; height:20px; color:var(--amber); flex:none; margin-top:2px; }
+.map-info-row p{ font-size:.9rem; margin:0; }
+.map-embed{ min-height:420px; position:relative; }
+.map-embed iframe{ width:100%; height:100%; min-height:420px; border:0; display:block; filter:grayscale(.15) contrast(1.05); }
+@media (max-width:900px){
+  .map-section{ grid-template-columns:1fr; margin:0 16px; border-radius:20px; }
+  .map-info{ padding:40px 26px; }
+}
+ 
+/* ============================================================
+   QUOTE / BOOKING FORM
+   ============================================================ */
+.quote-section{ background:var(--paper); color:var(--ink); border-radius:28px; margin:0 28px; padding:0; overflow:hidden; }
+.quote-inner{ display:grid; grid-template-columns:.85fr 1.15fr; }
+.quote-side{ padding:64px 52px; background:var(--ink); color:var(--paper); position:relative; overflow:hidden; }
+.quote-side::after{
+  content:""; position:absolute; right:-60px; bottom:-60px; width:220px; height:220px; border-radius:50%;
+  background:radial-gradient(circle, rgba(242,183,5,.18), transparent 70%);
+}
+.quote-side .eyebrow{ margin-bottom:18px; }
+.quote-side h2{ font-size:clamp(1.9rem,3.4vw,2.6rem); color:var(--paper); }
+.quote-side p{ margin-top:18px; color:rgba(243,239,224,.7); max-width:380px; }
+.quote-perks{ margin-top:36px; display:flex; flex-direction:column; gap:16px; }
+.quote-perks li{ display:flex; gap:12px; align-items:flex-start; font-size:.88rem; color:rgba(243,239,224,.82); }
+.quote-perks svg{ width:18px; height:18px; color:var(--amber); flex:none; margin-top:2px; }
+.quote-direct{ margin-top:40px; display:flex; gap:12px; flex-wrap:wrap; }
+ 
+.quote-form{ padding:60px 56px; }
+.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+.field{ margin-bottom:18px; }
+.field.full{ grid-column:1/-1; }
+.field label{
+  display:block; font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.07em;
+  color:rgba(15,27,20,.55); margin-bottom:8px;
+}
+.field input, .field select, .field textarea{
+  width:100%; padding:13px 16px; border-radius:10px; border:1.5px solid rgba(15,27,20,.15);
+  background:#fff; color:var(--ink); transition:border-color .2s, box-shadow .2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus{
+  outline:none; border-color:var(--amber); box-shadow:0 0 0 4px rgba(242,183,5,.18);
+}
+.field textarea{ resize:vertical; min-height:90px; }
+.pest-picker{ display:flex; flex-wrap:wrap; gap:8px; }
+.pest-opt{
+  font-size:.8rem; padding:9px 14px; border-radius:999px; border:1.5px solid rgba(15,27,20,.18);
+  transition:.2s; user-select:none;
+}
+.pest-opt input{ display:none; }
+.pest-opt.active{ background:var(--ink); color:var(--amber); border-color:var(--ink); }
+.form-submit{ width:100%; margin-top:8px; padding:16px; }
+.form-note{ margin-top:14px; font-size:.78rem; color:rgba(15,27,20,.5); }
+.form-status{ margin-top:14px; font-size:.85rem; font-weight:600; display:none; padding:12px 16px; border-radius:10px; }
+.form-status.show{ display:block; }
+.form-status.ok{ background:rgba(46,74,58,.12); color:#1e5c3a; }
+.form-status.err{ background:rgba(193,68,14,.12); color:#a33509; }
+ 
+/* ============================================================
+   CTA BANNER
+   ============================================================ */
+.cta-banner{
+  background:linear-gradient(120deg, var(--amber), var(--amber-2));
+  color:var(--ink); border-radius:28px; margin:0 28px; padding:64px 56px;
+  display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap;
+  position:relative; overflow:hidden;
+}
+.cta-banner h2{ color:var(--ink); font-size:clamp(2rem,4vw,2.8rem); max-width:560px; }
+.cta-banner .btn-ghost{ border-color:rgba(15,27,20,.4); color:var(--ink); }
+.cta-banner .btn-ghost:hover{ border-color:var(--ink); background:rgba(15,27,20,.06); }
+ 
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer{ padding:90px 0 34px; }
+.footer-grid{ display:grid; grid-template-columns:1.3fr .8fr .8fr 1fr; gap:40px; margin-bottom:70px; }
+.footer-brand p{ margin-top:16px; font-size:.9rem; max-width:280px; }
+.footer-col h4{ font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--amber); margin-bottom:18px; }
+.footer-col a, .footer-col li{ display:block; font-size:.88rem; color:rgba(243,239,224,.65); margin-bottom:12px; }
+.footer-col a:hover{ color:var(--amber); }
+.footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:28px; border-top:1px solid var(--line); font-size:.78rem; color:rgba(243,239,224,.45); flex-wrap:wrap; gap:12px; }
+.footer-bottom .mono{ font-family:var(--mono); }
+ 
+/* ============================================================
+   FLOATING ACTION BUTTONS
+   ============================================================ */
+.fab-stack{ position:fixed; right:22px; bottom:22px; z-index:90; display:flex; flex-direction:column; gap:12px; align-items:flex-end; }
+.fab{
+  width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  box-shadow:0 14px 30px -8px rgba(0,0,0,.55); transition:transform .25s var(--ease);
+}
+.fab:hover{ transform:scale(1.08); }
+.fab svg{ width:26px; height:26px; }
+.fab-call{ background:var(--amber); color:var(--ink); }
+.fab-wa{ background:#25D366; color:#062611; }
+.fab-label{
+  position:absolute; right:70px; top:50%; transform:translateY(-50%);
+  background:var(--ink); color:var(--paper); padding:8px 14px; border-radius:8px; font-size:.76rem;
+  white-space:nowrap; opacity:0; pointer-events:none; transition:opacity .2s; font-family:var(--mono);
+}
+.fab-wrap{ position:relative; }
+.fab-wrap:hover .fab-label{ opacity:1; }
+ 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  .hero .wrap{ grid-template-columns:1fr; text-align:left; }
+  .hero-stage{ height:320px; order:-1; }
+  .badge-3d{ width:220px; height:220px; }
+  .services-grid{ grid-template-columns:repeat(2,1fr); }
+  .process{ grid-template-columns:repeat(2,1fr); row-gap:40px; }
+  .process::before{ display:none; }
+  .stats-grid{ grid-template-columns:repeat(2,1fr); }
+  .stat:nth-child(3){ border-left:none; }
+  .coverage-wrap, .why-grid{ grid-template-columns:1fr; gap:40px; }
+  .testi-track{ grid-template-columns:1fr; }
+  .quote-inner{ grid-template-columns:1fr; }
+  .footer-grid{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:720px){
+  .nav-links{ display:none; }
+  .nav-cta .btn-ghost{ display:none; }
+  .section{ padding:76px 0; }
+  .services-grid{ grid-template-columns:1fr; }
+  .form-row{ grid-template-columns:1fr; }
+  .quote-form,.quote-side{ padding:40px 26px; }
+  .cta-banner{ margin:0 16px; padding:44px 28px; flex-direction:column; align-items:flex-start; }
+  .footer-grid{ grid-template-columns:1fr; }
+  .quote-section, .cta-banner{ margin:0 16px; border-radius:20px; }
+  .wrap{ padding:0 18px; }
+}
+@media (prefers-reduced-motion: reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; }
+}
+</style>
+</head>
+<body>
+ 
+<!-- ============================================================
+     SITE-WIDE PEST HUNT — a bug roams the entire site.
+     Fixed overlay: stays on screen through every scroll position.
+     ============================================================ -->
+<canvas id="bug-hunt-canvas"></canvas>
+<div class="bug-hud" id="bugHud">
+  <div class="bug-hud-badge bug-hunt-hint" id="bugHuntHint">A pest is loose on the site — find &amp; click it</div>
+  <div style="display:flex; gap:8px; align-items:center;">
+    <button id="bugHuntToggle" class="bug-hunt-toggle">Disable Hunt</button>
+  </div>
+  <div class="bug-hud-badge">
+    <span>Eliminated <strong id="bugHudCount">0</strong></span>
+    <span style="opacity:.4;">/</span>
+    <span>Speed <strong id="bugHudSpeed">x1</strong></span>
+  </div>
+</div>
+ 
+ 
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <img src="logosk.jpeg" alt="Surya Koti Pest Control" class="brand-mark" />
+      <span class="brand-text">Surya Koti<span>Pest Control Services</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#coverage">Coverage</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#quote">Get Quote</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#" class="btn btn-ghost btn-sm" id="callBtnNav">Call Now</a>
+      <a href="#" class="btn btn-wa btn-sm" id="waBtnNav">WhatsApp</a>
+    </div>
+  </div>
+</header>
+ 
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid-lines"></div>
+  <div class="wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">Licensed &amp; Insured — Serving All of Bihar</div>
+      <h1>Every pest<br>meets its <em>match.</em></h1>
+      <p class="lede">Termites, cockroaches, mosquitoes, rodents and bed bugs don't stand a chance. Surya Koti Pest Control Services brings certified technicians, hospital-grade treatments and a written warranty to homes, farms and businesses across Bihar.</p>
+      <div class="hero-actions">
+        <a href="#quote" class="btn btn-amber">Get Free Inspection</a>
+        <a href="#" class="btn btn-wa" id="waBtnHero">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.12.99 2.06 1.3 2.35 1.44.29.15.46.13.63-.08.17-.2.72-.84.92-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.93.29.15.48.22.55.34.07.13.07.75-.17 1.44Z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+      <div class="hours-badge">
+        <span class="hours-badge-num">24×7</span>
+        <span class="hours-badge-txt">Emergency pest<br>response, every day</span>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5v6c0 5.5 3.6 9.7 8 11 4.4-1.3 8-5.5 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg><span>Govt. Registered</span></div>
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg><span>Odourless Options</span></div>
+        <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Same-Day Visit</span></div>
+      </div>
+    </div>
+ 
+    <div class="hero-stage">
+      <div class="hero-stage-orbit"></div>
+      <div class="hero-stage-orbit b"></div>
+      <div class="badge-ring"></div>
+      <div class="badge-3d">
+        <div class="badge-face front">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M12 2 4 5.5v6c0 6 3.5 10.5 8 12 4.5-1.5 8-6 8-12v-6L12 2Z"/>
+            <path d="m9 12 2.2 2.2L15.5 10"/>
+          </svg>
+        </div>
+        <div class="badge-face back">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
+            <circle cx="12" cy="12" r="8"/>
+            <path d="M12 4v16M4 12h16" stroke-dasharray="1 4"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- district marquee -->
+<div class="marquee-strip">
+  <div class="marquee-track" id="marqueeTrack"></div>
+</div>
+ 
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Treat</div>
+      <h2>Six threats. One team that ends them.</h2>
+      <p>From a single termite line in the almirah to a full godown infestation — every treatment starts with a real inspection, not a guess.</p>
+    </div>
+    <div class="services-grid" id="servicesGrid"></div>
+  </div>
+</section>
+ 
+<div class="wrap"><div class="mh-divider" id="divider1"></div></div>
+ 
+<!-- ============================================================
+     PROCESS
+     ============================================================ -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">How It Works</div>
+      <h2>Booked to protected in four steps.</h2>
+    </div>
+    <div class="process">
+      <div class="p-step reveal"><div class="p-num">01</div><h3>Book</h3><p>Call, WhatsApp or fill the quote form. We confirm a slot within the hour.</p></div>
+      <div class="p-step reveal"><div class="p-num">02</div><h3>Inspect</h3><p>A technician surveys the site and identifies the pest, entry points and severity — free of cost.</p></div>
+      <div class="p-step reveal"><div class="p-num">03</div><h3>Treat</h3><p>Certified chemicals or gel/herbal options applied per the space — home, kitchen, farm or warehouse.</p></div>
+      <div class="p-step reveal"><div class="p-num">04</div><h3>Warranty</h3><p>Written service warranty with a free follow-up visit if pests return within the covered period.</p></div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<div class="stats-band">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat reveal"><div class="num" data-count="12">0</div><div class="lbl">Years in Service</div></div>
+      <div class="stat reveal"><div class="num" data-count="9400">0</div><div class="lbl">Properties Treated</div></div>
+      <div class="stat reveal"><div class="num" data-count="28">0</div><div class="lbl">Districts Covered</div></div>
+      <div class="stat reveal"><div class="num" data-count="97">0</div><div class="lbl">% Client Satisfaction</div></div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ============================================================
+     COVERAGE
+     ============================================================ -->
+<section class="section" id="coverage">
+  <div class="wrap coverage-wrap">
+    <div class="reveal">
+      <div class="eyebrow">Service Area</div>
+      <h2 style="margin-top:14px;">Wherever you are in Bihar, we're already nearby.</h2>
+      <p style="margin-top:18px;">Local technician teams stationed across the state mean faster response — most bookings get a visit the same or next day.</p>
+      <div class="map-motif" style="margin-top:34px;">
+        <svg viewBox="0 0 300 300" fill="none">
+          <path d="M50 60 C90 40 150 35 190 55 C230 70 260 100 255 140 C250 180 220 200 200 230 C180 260 140 270 110 250 C80 232 60 210 45 175 C30 140 20 90 50 60Z"
+                stroke="#F2B705" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.55"/>
+        </svg>
+        <div class="map-pulse" style="top:38%; left:44%;"><span class="map-pulse-label"></span></div>
+        <div class="map-pulse" style="top:58%; left:60%;"><span class="map-pulse-label"></span></div>
+        <div class="map-pulse" style="top:70%; left:35%;"><span class="map-pulse-label"></span></div>
+        <div class="map-pulse" style="top:30%; left:65%;"><span class="map-pulse-label"></span></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="district-chips" id="districtChips"></div>
+    </div>
+  </div>
+</section>
+ 
+<div class="wrap"><div class="mh-divider" id="divider2"></div></div>
+ 
+<!-- ============================================================
+     WHY US
+     ============================================================ -->
+<section class="section" id="why">
+  <div class="wrap why-grid">
+    <div class="reveal">
+      <div class="eyebrow">Why Surya Koti</div>
+      <h2 style="margin-top:14px;">Pest control the way it should feel — thorough, honest, gone.</h2>
+      <p style="margin-top:18px; max-width:420px;">No upsells at the doorstep, no vague spraying. Just a diagnosis, a plan, and a warranty we stand behind.</p>
+    </div>
+    <div class="why-list">
+      <div class="why-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <div><h3>Free, honest inspection</h3><p>We tell you if you even need treatment — no manufactured emergencies.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5.5v6c0 6 3.5 10.5 8 12 4.5-1.5 8-6 8-12v-6L12 2Z"/></svg>
+        <div><h3>Family & pet-safe formulations</h3><p>Odourless and herbal options available for homes with kids, elders or pets.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <div><h3>Fast rural + urban response</h3><p>Technician teams based across Bihar's districts, not just Patna.</p></div>
+      </div>
+      <div class="why-item reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h4l3 8 4-16 3 8h4"/></svg>
+        <div><h3>Written service warranty</h3><p>Pests return within the covered period, we return — no extra charge.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     GALLERY
+     ============================================================ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">On The Job</div>
+      <h2>Real visits, real treatments.</h2>
+      <p>A look at our technicians at work across homes, offices, kitchens and event venues in Bihar.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     CLIENTS
+     ============================================================ -->
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Regular Clients</div>
+      <h2>Trusted by hotels, hospitals and banks across Patna.</h2>
+    </div>
+    <div class="clients-strip reveal" id="clientsStrip"></div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     TESTIMONIALS
+     ============================================================ -->
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">From Our Clients</div>
+      <h2>Bihar households and businesses trust us.</h2>
+    </div>
+    <div class="testi-track" id="testiTrack"></div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     QUOTE FORM
+     ============================================================ -->
+<section class="section" id="quote">
+  <div class="quote-section reveal">
+    <div class="quote-inner">
+      <div class="quote-side">
+        <div class="eyebrow">Get A Free Quote</div>
+        <h2>Tell us the problem. We'll call within 30 minutes.</h2>
+        <p>Fill the form and our team reaches out to confirm your inspection slot — or skip straight to a call or WhatsApp.</p>
+        <ul class="quote-perks">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>No-obligation inspection &amp; quote</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>Transparent, upfront pricing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>Certified technicians, every visit</li>
+        </ul>
+        <div class="quote-direct">
+          <a href="#" class="btn btn-amber btn-sm" id="callBtnQuote">Call Now</a>
+          <a href="#" class="btn btn-wa btn-sm" id="waBtnQuote">WhatsApp Now</a>
+        </div>
+      </div>
+ 
+      <form class="quote-form" id="quoteForm">
+        <div class="form-row">
+          <div class="field"><label for="fName">Full Name</label><input id="fName" name="name" type="text" placeholder="Your name" required></div>
+          <div class="field"><label for="fPhone">Phone Number</label><input id="fPhone" name="phone" type="tel" placeholder="10-digit mobile number" required pattern="[0-9+ ]{10,15}"></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label for="fDistrict">District</label>
+            <select id="fDistrict" name="district" required><option value="" disabled selected>Select district</option></select>
+          </div>
+          <div class="field"><label for="fDate">Preferred Visit Date</label><input id="fDate" name="date" type="date"></div>
+        </div>
+        <div class="field full"><label for="fAddress">Address / Locality</label><input id="fAddress" name="address" type="text" placeholder="House / street / area"></div>
+        <div class="field full">
+          <label>Pest Type</label>
+          <div class="pest-picker" id="pestPicker"></div>
+        </div>
+        <div class="field full"><label for="fMsg">Additional Details (optional)</label><textarea id="fMsg" name="message" placeholder="Tell us more — property type, severity, best time to call..."></textarea></div>
+ 
+        <button type="submit" class="btn btn-amber form-submit" id="submitBtn">Send Quotation Request</button>
+        <p class="form-note">Submitting this form sends your details directly to our team on Telegram for immediate action.</p>
+        <div class="form-status" id="formStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     CTA BANNER
+     ============================================================ -->
+<section class="section" style="padding-top:0;">
+  <div class="cta-banner reveal">
+    <h2>Pests don't wait for a good time. Neither should you.</h2>
+    <div style="display:flex; gap:14px; flex-wrap:wrap;">
+      <a href="#" class="btn btn-ghost" id="callBtnCta">Call Now</a>
+      <a href="#quote" class="btn" style="background:var(--ink); color:var(--amber);">Book Appointment</a>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     LOCATION / MAP
+     ============================================================ -->
+<section class="section" id="location">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Find Us</div>
+      <h2>Visit our office in Patna.</h2>
+    </div>
+  </div>
+  <div class="map-section reveal">
+    <div class="map-info">
+      <div class="eyebrow">Head Office</div>
+      <h3>Surya Koti Pest Control Services</h3>
+      <div class="map-info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 5.5v6c0 6 3.5 10.5 8 12 4.5-1.5 8-6 8-12v-6L12 2Z"/></svg>
+        <p id="mapAddress">Loading address...</p>
+      </div>
+      <div class="map-info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <p id="mapHours">Loading hours...</p>
+      </div>
+      <div class="map-info-row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+        <p id="mapPhone">Loading phone...</p>
+      </div>
+      <div style="margin-top:30px; display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=25.586028,85.109444" target="_blank" rel="noopener" class="btn btn-amber btn-sm">Get Directions</a>
+        <a href="#quote" class="btn btn-ghost btn-sm">Book a Visit</a>
+      </div>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=25.586028,85.109444&z=16&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Surya Koti Pest Control Services location on Google Maps"></iframe>
+    </div>
+  </div>
+</section>
+ 
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" stroke="#F2B705" stroke-width="2"/>
+            <path d="M24 10 L34 16 V26 C34 33 29.5 37.5 24 39 C18.5 37.5 14 33 14 26 V16 Z" fill="#2E4A3A" stroke="#F2B705" stroke-width="1.4"/>
+            <circle cx="24" cy="23" r="5.5" fill="#F2B705"/>
+          </svg>
+          <span class="brand-text">Surya Koti<span>Pest Control Services</span></span>
+        </a>
+        <p>Licensed pest management across Bihar — termite, cockroach, mosquito, rodent, bed bug and agricultural pest control for homes, offices and farms.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#coverage">Service Area</a>
+        <a href="#testimonials">Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="#services">Termite Control</a>
+        <a href="#services">Cockroach Control</a>
+        <a href="#services">Rodent Control</a>
+        <a href="#services">Godown &amp; Farm Pest Control</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#" id="footerPhone">Loading...</a>
+        <a href="#" id="footerEmail">Loading...</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=25.586028,85.109444" target="_blank" rel="noopener" id="footerAddress">Loading...</a>
+        <li style="color:rgba(243,239,224,.65);" id="footerHours">Loading...</li>
+      </div>
+    </div>
+    <div class="mh-divider" id="divider3" style="margin-bottom:28px;"></div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Surya Koti Pest Control Services. All rights reserved.</span>
+      <span class="mono">Built for a pest-free Bihar</span>
+    </div>
+  </div>
+</footer>
+ 
+<!-- ============================================================
+     FLOATING ACTION BUTTONS
+     ============================================================ -->
+<div class="fab-stack">
+  <div class="fab-wrap">
+    <span class="fab-label">Call Now</span>
+    <a href="#" class="fab fab-call" id="fabCall" aria-label="Call now">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8Z"/></svg>
+    </a>
+  </div>
+  <div class="fab-wrap">
+    <span class="fab-label">WhatsApp</span>
+    <a href="#" class="fab fab-wa" id="fabWa" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.1c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.12.11-1.8-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.37-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.02-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.12.99 2.06 1.3 2.35 1.44.29.15.46.13.63-.08.17-.2.72-.84.92-1.13.19-.29.39-.24.65-.14.27.1 1.68.79 1.97.93.29.15.48.22.55.34.07.13.07.75-.17 1.44Z"/></svg>
+    </a>
+  </div>
+</div>
+ 
+<!-- ============================================================================================
+     CONFIG — EDIT THESE VALUES FOR YOUR BUSINESS
+     ============================================================================================ -->
+<script>
+window.SKPC_CONFIG = {
+  // Phone number used for "Call Now" buttons — include country code, digits only after the plus.
+  phoneDisplay: "+91 84346 60429",
+  phoneTel: "+918434660429",
+ 
+  // WhatsApp number in international format WITHOUT + or spaces (e.g. 919000000000)
+  whatsappNumber: "918809999864",
+  whatsappPresetMessage: "Hi Surya Koti Pest Control, I'd like to book a pest inspection.",
+ 
+  email: "info@suryakotipestcontrol.in",
+  address: "New Alakapuri Office, A/70, Patna, Gardani Bagh, Patna - 800001",
+  hours: "Open 24x7 — Every Day",
+ 
+  // --- TELEGRAM NOTIFICATIONS ---
+  // 1. Message @BotFather on Telegram -> /newbot -> copy the token it gives you below.
+  // 2. Message your new bot once (any text), then visit:
+  //    https://api.telegram.org/bot<YOUR_TOKEN>/getUpdates
+  //    and copy the "chat":{"id": ...} number into telegramChatId below.
+  // NOTE: because this is a static site with no server, the bot token is visible in this
+  // file's source. Use a bot created only for this form (no other permissions/admin rights)
+  // so if the token ever needs resetting, nothing else is affected.
+  telegramBotToken: "YOUR_BOT_TOKEN_HERE",
+  telegramChatId: "YOUR_CHAT_ID_HERE"
+};
+</script>
+ 
+<script>
+(function(){
+  const CFG = window.SKPC_CONFIG;
+ 
+  /* ---------- wire up call / whatsapp links ---------- */
+  const telLink = "tel:" + CFG.phoneTel;
+  const waLink = "https://wa.me/" + CFG.whatsappNumber + "?text=" + encodeURIComponent(CFG.whatsappPresetMessage);
+  ["callBtnNav","callBtnQuote","callBtnCta","fabCall"].forEach(id=>{
+    const el = document.getElementById(id); if(el){ el.href = telLink; }
+  });
+  ["waBtnNav","waBtnHero","waBtnQuote","fabWa"].forEach(id=>{
+    const el = document.getElementById(id); if(el){ el.href = waLink; el.target="_blank"; el.rel="noopener"; }
+  });
+  const fp = document.getElementById('footerPhone'); if(fp){ fp.textContent = CFG.phoneDisplay; fp.href = telLink; }
+  const fe = document.getElementById('footerEmail'); if(fe){ fe.textContent = CFG.email; fe.href = "mailto:"+CFG.email; }
+  const fa = document.getElementById('footerAddress'); if(fa){ fa.textContent = CFG.address; }
+  const fh = document.getElementById('footerHours'); if(fh){ fh.textContent = CFG.hours; }
+  const ma = document.getElementById('mapAddress'); if(ma){ ma.textContent = CFG.address; }
+  const mh = document.getElementById('mapHours'); if(mh){ mh.textContent = CFG.hours; }
+  const mp = document.getElementById('mapPhone'); if(mp){ mp.textContent = CFG.phoneDisplay; }
+  document.getElementById('year').textContent = new Date().getFullYear();
+ 
+  /* ---------- data: districts ---------- */
+  const DISTRICTS = ["Patna","Gaya","Bhagalpur","Muzaffarpur","Darbhanga","Purnia","Bhojpur (Ara)","Begusarai","Saran (Chapra)","Katihar","Munger","Samastipur","Rohtas (Sasaram)","Vaishali (Hajipur)","Siwan","East Champaran (Motihari)","West Champaran (Bettiah)","Nawada","Jehanabad","Buxar","Kishanganj","Araria","Madhubani","Sitamarhi","Nalanda (Bihar Sharif)","Aurangabad","Banka","Supaul"];
+ 
+  const chipsWrap = document.getElementById('districtChips');
+  DISTRICTS.forEach(d=>{ const c=document.createElement('span'); c.className='chip'; c.textContent=d; chipsWrap.appendChild(c); });
+ 
+  const marquee = document.getElementById('marqueeTrack');
+  const marqueeItems = DISTRICTS.concat(DISTRICTS).map(d=>{ const s=document.createElement('span'); s.textContent=d; return s; });
+  marqueeItems.forEach(el=>marquee.appendChild(el));
+ 
+  const districtSelect = document.getElementById('fDistrict');
+  DISTRICTS.forEach(d=>{ const o=document.createElement('option'); o.value=d; o.textContent=d; districtSelect.appendChild(o); });
+ 
+  /* ---------- data: services ---------- */
+  const SERVICES = [
+    { name:"Termite Control", tag:"Anti-Termite Treatment", desc:"Pre &amp; post-construction soil treatment plus targeted foam injection for active termite lines in furniture and structures.",
+      icon:'<path d="M12 2 4 5.5v6c0 6 3.5 10.5 8 12 4.5-1.5 8-6 8-12v-6L12 2Z"/><path d="m9 12 2.2 2.2L15.5 10"/>' },
+    { name:"Cockroach Control", tag:"Gel & Spray Treatment", desc:"Gel-baiting and residual spraying in kitchens, drains and cracks — odourless options available for occupied homes.",
+      icon:'<circle cx="12" cy="13" r="4"/><path d="M12 9V5m-4 8-3-2m14 2 3-2M8 17l-3 2m8-2 3 2M9 6 7 4m8 2 2-2"/>' },
+    { name:"Mosquito & Fly Control", tag:"Fogging & Larviciding", desc:"Cold fogging, larvicide treatment for stagnant water points and residual spraying for lasting mosquito reduction.",
+      icon:'<path d="M4 12c4-6 12-6 16 0-4 6-12 6-16 0Z"/><circle cx="12" cy="12" r="2"/>' },
+    { name:"Rodent Control", tag:"Baiting & Sealing", desc:"Tamper-proof bait stations, glue traps and entry-point sealing for homes, godowns and food-processing units.",
+      icon:'<circle cx="9" cy="12" r="5"/><path d="M14 10c2-2 5-2 6 0-1 1-2 1.5-3 1.5M14 14c1.5 1 3.5 1 5 0"/>' },
+    { name:"Bed Bug Treatment", tag:"Heat & Chemical Treatment", desc:"Mattress, bed-frame and crevice treatment with steam and residual chemicals, plus a follow-up check visit.",
+      icon:'<ellipse cx="12" cy="13" rx="5" ry="6"/><path d="M12 7V4m-3 3-2-2m8 2 2-2M7 16l-3 1m14-1 3 1"/>' },
+    { name:"Agricultural & Godown Pest Control", tag:"Fumigation Services", desc:"Fumigation and stored-grain pest management for farms, warehouses and mandis across Bihar's agri belt.",
+      icon:'<path d="M4 20h16M6 20V10l6-6 6 6v10M10 20v-6h4v6"/>' }
+  ];
+  const svcGrid = document.getElementById('servicesGrid');
+  SERVICES.forEach(s=>{
+    const card = document.createElement('div'); card.className='svc-card reveal';
+    card.innerHTML = `<div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">${s.icon}</svg></div>
+      <h3>${s.name}</h3><p>${s.desc}</p><span class="svc-tag">${s.tag}</span>`;
+    svcGrid.appendChild(card);
+  });
+ 
+  /* ---------- data: testimonials ---------- */
+  const TESTIMONIALS = [
+    { name:"Ravi Kumar", loc:"Patna", text:"Termite problem in our almirah was gone within a week of treatment. The technician showed us exactly where the colony was entering." },
+    { name:"Anjali Verma", loc:"Muzaffarpur", text:"Booked on WhatsApp in the evening, they visited the next morning. Very professional and the smell was minimal, safe for my kids." },
+    { name:"Suresh Prasad", loc:"Bhagalpur", text:"Used them for our godown's grain pest fumigation. Thorough team, proper documentation, and pricing was upfront from the start." }
+  ];
+  const testiTrack = document.getElementById('testiTrack');
+  TESTIMONIALS.forEach(t=>{
+    const card = document.createElement('div'); card.className='testi-card reveal';
+    card.innerHTML = `<div class="stars">${'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.6L22 9.3l-5 4.9L18.2 22 12 18.3 5.8 22 7 14.2l-5-4.9 7.1-.7Z"/></svg>'.repeat(5)}</div>
+      <p>"${t.text}"</p>
+      <div class="testi-who"><div class="testi-avatar">${t.name.charAt(0)}</div><div><strong style="font-size:.9rem;">${t.name}</strong><span>${t.loc}, Bihar</span></div></div>`;
+    testiTrack.appendChild(card);
+  });
+ 
+  /* ---------- gallery (auto-populated from workspace images) ---------- */
+  const IMAGE_FILES = [
+    "logosk.jpeg",
+    "pest1.jpeg",
+    "pest 2.jpeg",
+    "pest 3.jpeg",
+    "pest4.jpeg"
+  ];
+  const galleryGrid = document.getElementById('galleryGrid');
+  if(galleryGrid){
+    // exclude the logo file from the gallery
+    const GALLERY = IMAGE_FILES.filter(f => f.toLowerCase() !== 'logosk.jpeg').map((f,i)=>({ src: encodeURI(f), caption: `Visit photo ${i+1}` }));
+    GALLERY.forEach(item=>{
+      const el = document.createElement('div'); el.className = 'gallery-item reveal';
+      el.innerHTML = `<img src="${item.src}" alt="${item.caption}" loading="lazy"><div class="gallery-caption">${item.caption}</div>`;
+      galleryGrid.appendChild(el);
+    });
+  }
+ 
+  /* ---------- regular clients ---------- */
+  const CLIENTS = [
+    "Red Velvet Hotel", "Samarpan", "Dhaba 1986", "Restaurant Partner",
+    "Medanta Hospital", "Heart Hospital", "Canara Bank", "Axis Bank", "PNB Bank", "Dr. Kant"
+  ];
+  const clientsStrip = document.getElementById('clientsStrip');
+  if(clientsStrip){
+    CLIENTS.forEach(name=>{
+      const c = document.createElement('div'); c.className = 'client-chip';
+      c.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>${name}`;
+      clientsStrip.appendChild(c);
+    });
+  }
+ 
+  /* ---------- pest picker chips ---------- */
+  const PEST_TYPES = ["Termite","Cockroach","Mosquito","Rodent","Bed Bug","Ant","General Household","Agricultural / Godown"];
+  const pestPicker = document.getElementById('pestPicker');
+  const selectedPests = new Set();
+  PEST_TYPES.forEach(p=>{
+    const label = document.createElement('label'); label.className='pest-opt';
+    label.innerHTML = `<input type="checkbox" value="${p}"> ${p}`;
+    label.querySelector('input').addEventListener('change', e=>{
+      label.classList.toggle('active', e.target.checked);
+      e.target.checked ? selectedPests.add(p) : selectedPests.delete(p);
+    });
+    pestPicker.appendChild(label);
+  });
+ 
+  /* ---------- Madhubani-hazard signature divider (repeating SVG motif) ---------- */
+  function buildDivider(el){
+    if(!el) return;
+    const unit = 60, count = 20;
+    let paths = "";
+    for(let i=0;i<count;i++){
+      const x = i*unit;
+      paths += `
+        <g transform="translate(${x},0)" opacity="0.85">
+          <path d="M0 17 L15 4 L30 17 L15 30 Z" fill="none" stroke="#F2B705" stroke-width="1.1"/>
+          <circle cx="15" cy="17" r="3.4" fill="#C1440E"/>
+          <path d="M30 17 L45 8 L60 17" fill="none" stroke="#2E4A3A" stroke-width="1.1"/>
+        </g>`;
+    }
+    el.innerHTML = `<svg viewBox="0 0 ${unit*count} 34" preserveAspectRatio="none">${paths}</svg>`;
+  }
+  ['divider1','divider2','divider3'].forEach(id=>buildDivider(document.getElementById(id)));
+ 
+  /* ---------- scroll reveal ---------- */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold:0.15 });
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+ 
+  /* ---------- count-up stats ---------- */
+  const statEls = document.querySelectorAll('.stat .num');
+  const statIO = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        const el = en.target, target = parseInt(el.dataset.count,10);
+        let cur = 0; const dur = 1400; const start = performance.now();
+        function tick(now){
+          const p = Math.min((now-start)/dur, 1);
+          const eased = 1 - Math.pow(1-p, 3);
+          el.textContent = Math.round(eased*target);
+          if(p<1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        statIO.unobserve(el);
+      }
+    });
+  }, { threshold:0.4 });
+  statEls.forEach(el=>statIO.observe(el));
+ 
+  /* ---------- 3D tilt on service cards ---------- */
+  document.addEventListener('mousemove', (e)=>{
+    document.querySelectorAll('.svc-card').forEach(card=>{
+      const r = card.getBoundingClientRect();
+      if(e.clientX < r.left-40 || e.clientX > r.right+40 || e.clientY < r.top-40 || e.clientY > r.bottom+40) return;
+      const px = (e.clientX - r.left)/r.width - 0.5;
+      const py = (e.clientY - r.top)/r.height - 0.5;
+      const inside = e.clientX>=r.left && e.clientX<=r.right && e.clientY>=r.top && e.clientY<=r.bottom;
+      if(inside){
+        card.style.transform = `rotateY(${px*10}deg) rotateX(${-py*10}deg) translateZ(0)`;
+      } else {
+        card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+      }
+    });
+  });
+  document.querySelectorAll('.svc-card').forEach(card=>{
+    card.addEventListener('mouseleave', ()=>{ card.style.transform='rotateY(0deg) rotateX(0deg)'; });
+  });
+ 
+  /* ---------- Three.js hero particle swarm ---------- */
+  (function initHeroCanvas(){
+    const canvas = document.getElementById('hero-canvas');
+    if(!canvas || typeof THREE === 'undefined') return;
+    const heroEl = document.querySelector('.hero');
+    let w = heroEl.clientWidth, h = heroEl.clientHeight;
+ 
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    renderer.setSize(w,h);
+ 
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(55, w/h, 0.1, 100);
+    camera.position.z = 18;
+ 
+    const COUNT = 140;
+    const geo = new THREE.BufferGeometry();
+    const positions = new Float32Array(COUNT*3);
+    const speeds = new Float32Array(COUNT);
+    for(let i=0;i<COUNT;i++){
+      positions[i*3]   = (Math.random()-0.5)*40;
+      positions[i*3+1] = (Math.random()-0.5)*22;
+      positions[i*3+2] = (Math.random()-0.5)*20;
+      speeds[i] = 0.15 + Math.random()*0.35;
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(positions,3));
+ 
+    const mat = new THREE.PointsMaterial({ color:0xF2B705, size:0.11, transparent:true, opacity:0.75 });
+    const points = new THREE.Points(geo, mat);
+    scene.add(points);
+ 
+    // faint ember-colored secondary layer
+    const geo2 = new THREE.BufferGeometry();
+    const positions2 = new Float32Array(60*3);
+    for(let i=0;i<60;i++){
+      positions2[i*3]   = (Math.random()-0.5)*40;
+      positions2[i*3+1] = (Math.random()-0.5)*22;
+      positions2[i*3+2] = (Math.random()-0.5)*20;
+    }
+    geo2.setAttribute('position', new THREE.BufferAttribute(positions2,3));
+    const mat2 = new THREE.PointsMaterial({ color:0xC1440E, size:0.07, transparent:true, opacity:0.5 });
+    const points2 = new THREE.Points(geo2, mat2);
+    scene.add(points2);
+ 
+    let mouseX = 0, mouseY = 0;
+    window.addEventListener('mousemove', (e)=>{
+      mouseX = (e.clientX / window.innerWidth - 0.5);
+      mouseY = (e.clientY / window.innerHeight - 0.5);
+    });
+ 
+    function animate(){
+      requestAnimationFrame(animate);
+      const pos = geo.attributes.position.array;
+      for(let i=0;i<COUNT;i++){
+        pos[i*3+1] -= speeds[i]*0.02;
+        if(pos[i*3+1] < -11){ pos[i*3+1] = 11; }
+      }
+      geo.attributes.position.needsUpdate = true;
+      points.rotation.y += 0.0009;
+      points2.rotation.y -= 0.0006;
+      camera.position.x += (mouseX*3 - camera.position.x)*0.02;
+      camera.position.y += (-mouseY*2 - camera.position.y)*0.02;
+      camera.lookAt(0,0,0);
+      renderer.render(scene, camera);
+    }
+    animate();
+ 
+    window.addEventListener('resize', ()=>{
+      w = heroEl.clientWidth; h = heroEl.clientHeight;
+      camera.aspect = w/h; camera.updateProjectionMatrix();
+      renderer.setSize(w,h);
+    });
+  })();
+ 
+  /* ============================================================
+     SITE-WIDE PEST HUNT — bug roams the entire viewport as a
+     fixed overlay. Click it anywhere to spray it; speed +1 per kill.
+     ============================================================ */
+    // ---------- Bug hunt toggle & map-pulse labels ----------
+    (function(){
+      const toggleBtn = document.getElementById('bugHuntToggle');
+      const stored = localStorage.getItem('bugHunt') || 'on';
+      if(toggleBtn){
+        toggleBtn.textContent = stored === 'on' ? 'Disable Hunt' : 'Enable Hunt';
+        toggleBtn.addEventListener('click', ()=>{
+          const next = (localStorage.getItem('bugHunt')==='on') ? 'off' : 'on';
+          localStorage.setItem('bugHunt', next);
+          location.reload();
+        });
+      }
+      if(stored === 'off'){
+        const canvas = document.getElementById('bug-hunt-canvas'); if(canvas) canvas.style.display='none';
+        const hint = document.getElementById('bugHuntHint'); if(hint) hint.textContent = 'Pest hunt is disabled';
+      }
+
+      // populate labels for map pulses using DISTRICTS (if present)
+      try{
+        if(typeof DISTRICTS !== 'undefined'){
+          const pulses = document.querySelectorAll('.map-pulse');
+          pulses.forEach((p,i)=>{
+            const name = DISTRICTS[i] || DISTRICTS[i % DISTRICTS.length] || '';
+            const lbl = p.querySelector('.map-pulse-label');
+            if(lbl) lbl.textContent = name;
+            p.title = name;
+            p.addEventListener('mouseenter', ()=>{
+              const chips = Array.from(document.querySelectorAll('.chip'));
+              chips.forEach(c=> c.style.transform = (c.textContent === name) ? 'translateY(-4px) scale(1.02)' : '');
+            });
+            p.addEventListener('mouseleave', ()=>{ const chips = document.querySelectorAll('.chip'); chips.forEach(c=> c.style.transform=''); });
+          });
+        }
+      }catch(e){ console.warn('pulse label setup failed', e); }
+    })();
+  (function initBugHunt(){
+    const canvas = document.getElementById('bug-hunt-canvas');
+    if(!canvas || typeof THREE === 'undefined') return;
+    const hint = document.getElementById('bugHuntHint');
+    const countEl = document.getElementById('bugHudCount');
+    const speedEl = document.getElementById('bugHudSpeed');
+ 
+    let w = window.innerWidth, h = window.innerHeight;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    renderer.setSize(w,h);
+ 
+    const scene = new THREE.Scene();
+    const camera = new THREE.OrthographicCamera(-w/2, w/2, h/2, -h/2, -1000, 1000);
+    camera.position.set(0,0,500);
+    camera.lookAt(0,0,0);
+ 
+    scene.add(new THREE.HemisphereLight(0xF3EFE0, 0x0F1B14, 1.0));
+    const key = new THREE.DirectionalLight(0xffffff, 1.0);
+    key.position.set(200,400,600); scene.add(key);
+    const rim = new THREE.PointLight(0xF2B705, 0.7, 0); rim.position.set(-300,200,300); scene.add(rim);
+ 
+    function toWorld(px,py){ return new THREE.Vector3(px - w/2, h/2 - py, 0); }
+ 
+    /* ---------- bug builders (same species as before) ---------- */
+    function mat(color, opts){ return new THREE.MeshStandardMaterial(Object.assign({ color, roughness:0.55, metalness:0.05 }, opts||{})); }
+    function leg(len, r, color){ const g=new THREE.CylinderGeometry(r,r*0.7,len,6); const m=new THREE.Mesh(g,mat(color)); m.geometry.translate(0,-len/2,0); return m; }
+    function addLegs(group,n,color,spread,len,yBase){
+      for(let i=0;i<n;i++){
+        const side=i%2===0?1:-1, row=Math.floor(i/2);
+        const l=leg(len,0.018,color);
+        l.position.set(side*spread,yBase,0.12-row*0.14); l.rotation.z=side*0.6;
+        group.add(l);
+      }
+    }
+    function eyes(group,color,r,offsetX,y,z){ [-1,1].forEach(s=>{ const e=new THREE.Mesh(new THREE.SphereGeometry(r,8,8),mat(color,{roughness:0.2})); e.position.set(s*offsetX,y,z); group.add(e); }); }
+    function antenna(group,color,x,y,z,rotZ){ const a=leg(0.5,0.012,color); a.position.set(x,y,z); a.rotation.z=rotZ; a.rotation.x=-0.4; group.add(a); }
+ 
+    function buildTermite(){
+      const g=new THREE.Group();
+      const body=new THREE.Mesh(new THREE.SphereGeometry(0.26,16,16),mat(0xD8C08A)); body.scale.set(1,0.72,1.5); body.position.y=0.22; g.add(body);
+      const head=new THREE.Mesh(new THREE.SphereGeometry(0.13,12,12),mat(0xC9A85E)); head.position.set(0,0.24,0.34); g.add(head);
+      eyes(g,0x2b1d0a,0.025,0.06,0.27,0.42);
+      antenna(g,0xC9A85E,0.07,0.3,0.4,0.3); antenna(g,0xC9A85E,-0.07,0.3,0.4,-0.3);
+      [-0.22,0.22].forEach(s=>{ const wing=new THREE.Mesh(new THREE.PlaneGeometry(0.16,0.42),mat(0xEDE3C6,{transparent:true,opacity:0.55,side:THREE.DoubleSide})); wing.position.set(s,0.3,-0.05); wing.rotation.y=s>0?0.5:-0.5; g.add(wing); });
+      addLegs(g,6,0xB8935A,0.24,0.22,0.14);
+      return g;
+    }
+    function buildCockroach(){
+      const g=new THREE.Group();
+      const body=new THREE.Mesh(new THREE.SphereGeometry(0.28,16,16),mat(0x5A2E1A)); body.scale.set(1,0.5,1.7); body.position.y=0.16; g.add(body);
+      const head=new THREE.Mesh(new THREE.SphereGeometry(0.11,10,10),mat(0x3D1E10)); head.position.set(0,0.17,0.42); g.add(head);
+      eyes(g,0x0a0605,0.02,0.05,0.19,0.47);
+      antenna(g,0x3D1E10,0.06,0.22,0.5,0.5); antenna(g,0x3D1E10,-0.06,0.22,0.5,-0.5);
+      addLegs(g,6,0x2E160B,0.28,0.26,0.1);
+      return g;
+    }
+    function buildMosquito(){
+      const g=new THREE.Group();
+      const body=new THREE.Mesh(new THREE.SphereGeometry(0.09,10,10),mat(0x8A8F86)); body.scale.set(1,1,2.4); body.position.y=0.38; g.add(body);
+      const proboscis=leg(0.22,0.012,0x3A3F38); proboscis.rotation.x=1.5; proboscis.position.set(0,0.4,0.5); g.add(proboscis);
+      [-0.18,0.18].forEach(s=>{ const wing=new THREE.Mesh(new THREE.PlaneGeometry(0.3,0.14),mat(0xE9EAE4,{transparent:true,opacity:0.4,side:THREE.DoubleSide})); wing.position.set(s,0.46,0.05); wing.rotation.y=s>0?-0.3:0.3; wing.rotation.z=s>0?-0.2:0.2; g.add(wing); });
+      addLegs(g,6,0x6B6F64,0.14,0.42,0.3);
+      return g;
+    }
+    function buildRodent(){
+      const g=new THREE.Group();
+      const body=new THREE.Mesh(new THREE.SphereGeometry(0.32,16,16),mat(0x8C8C88)); body.scale.set(1,0.85,1.5); body.position.y=0.28; g.add(body);
+      const head=new THREE.Mesh(new THREE.SphereGeometry(0.17,12,12),mat(0x84837E)); head.position.set(0,0.3,0.48); g.add(head);
+      eyes(g,0x100f0d,0.028,0.08,0.33,0.56);
+      [-0.11,0.11].forEach(s=>{ const ear=new THREE.Mesh(new THREE.CircleGeometry(0.08,12),mat(0x6d6a63,{side:THREE.DoubleSide})); ear.position.set(s,0.44,0.4); g.add(ear); });
+      const tail=leg(0.7,0.03,0xA79F91); tail.rotation.x=1.7; tail.rotation.z=0.4; tail.position.set(0,0.16,-0.5); g.add(tail);
+      addLegs(g,4,0x6d6a63,0.26,0.24,0.14);
+      return g;
+    }
+    function buildBedbug(){
+      const g=new THREE.Group();
+      const body=new THREE.Mesh(new THREE.SphereGeometry(0.24,16,16),mat(0x8C3A2B)); body.scale.set(1,0.34,1.15); body.position.y=0.1; g.add(body);
+      const head=new THREE.Mesh(new THREE.SphereGeometry(0.09,10,10),mat(0x6E2A1E)); head.position.set(0,0.11,0.28); g.add(head);
+      antenna(g,0x6E2A1E,0.05,0.15,0.32,0.35); antenna(g,0x6E2A1E,-0.05,0.15,0.32,-0.35);
+      addLegs(g,6,0x5A2118,0.2,0.14,0.06);
+      return g;
+    }
+    function buildAnt(){
+      const g=new THREE.Group();
+      const abdomen=new THREE.Mesh(new THREE.SphereGeometry(0.16,14,14),mat(0x1B1B1B)); abdomen.position.set(0,0.2,-0.22); g.add(abdomen);
+      const thorax=new THREE.Mesh(new THREE.SphereGeometry(0.1,12,12),mat(0x232323)); thorax.position.set(0,0.2,0.03); g.add(thorax);
+      const head=new THREE.Mesh(new THREE.SphereGeometry(0.1,12,12),mat(0x1B1B1B)); head.position.set(0,0.21,0.27); g.add(head);
+      eyes(g,0x000000,0.02,0.055,0.23,0.32);
+      antenna(g,0x1B1B1B,0.05,0.3,0.32,0.4); antenna(g,0x1B1B1B,-0.05,0.3,0.32,-0.4);
+      addLegs(g,6,0x141414,0.18,0.24,0.14);
+      return g;
+    }
+ 
+    const BUG_TYPES = [
+      { build:buildTermite }, { build:buildCockroach }, { build:buildMosquito },
+      { build:buildRodent }, { build:buildBedbug }, { build:buildAnt }
+    ];
+    const BUG_SCALE = 150;      // world unit -> pixel scale
+    const HIT_RADIUS = 46;      // px, generous click target
+    const BASE_SPEED = 70;      // px/sec at speed level 1
+    const SPEED_STEP = 22;      // px/sec added per kill
+    const MAX_SPEED_LEVEL = 22; // soft cap so it stays killable
+ 
+    let typeIndex = 0, killCount = 0, speedLevel = 1, isBusy = false;
+    let bug = null, alive = false;
+    let px = w/2, py = h/2, tx = w/2, ty = h/2;
+    const NAV_H = 100, MARGIN = 40;
+    const sprayGroup = new THREE.Group(); scene.add(sprayGroup);
+    const activeSprays = [];
+    let hintDismissed = false;
+ 
+    function bounds(){ return { minX:MARGIN, maxX:w-MARGIN, minY:NAV_H, maxY:h-MARGIN }; }
+    function pickTarget(){ const b=bounds(); tx = b.minX+Math.random()*(b.maxX-b.minX); ty = b.minY+Math.random()*(b.maxY-b.minY); }
+ 
+    function currentSpeed(){ return BASE_SPEED + (Math.min(speedLevel,MAX_SPEED_LEVEL)-1)*SPEED_STEP; }
+ 
+    function spawnBug(){
+      const def = BUG_TYPES[typeIndex];
+      bug = def.build();
+      bug.scale.set(0.001,0.001,0.001);
+      const b = bounds();
+      px = b.minX + Math.random()*(b.maxX-b.minX);
+      py = b.minY + Math.random()*(b.maxY-b.minY);
+      bug.position.copy(toWorld(px,py));
+      scene.add(bug);
+      pickTarget();
+      alive = true; isBusy = false;
+ 
+      const start = performance.now();
+      function grow(now){
+        const p = Math.min((now-start)/340,1);
+        const s = (1-Math.pow(1-p,3)) * BUG_SCALE;
+        bug.scale.set(s,s,s);
+        if(p<1) requestAnimationFrame(grow);
+      }
+      requestAnimationFrame(grow);
+    }
+ 
+    function spawnSpray(worldPoint){
+      const N = 28;
+      for(let i=0;i<N;i++){
+        const s = new THREE.Mesh(
+          new THREE.SphereGeometry(4+Math.random()*3,6,6),
+          new THREE.MeshBasicMaterial({ color: Math.random()>0.5?0xEAF6F0:0xF2B705, transparent:true, opacity:0.9 })
+        );
+        s.position.copy(worldPoint);
+        const ang = Math.random()*Math.PI*2, spd = 2+Math.random()*5;
+        s.userData.vel = new THREE.Vector3(Math.cos(ang)*spd, 3+Math.random()*6, Math.sin(ang)*spd*0.4);
+        s.userData.born = performance.now();
+        sprayGroup.add(s); activeSprays.push(s);
+      }
+    }
+ 
+    function dismissHint(){
+      if(hintDismissed) return;
+      hintDismissed = true;
+      hint.classList.add('hide');
+    }
+ 
+    function killBug(){
+      if(!bug || !alive || isBusy) return;
+      isBusy = true; alive = false;
+      dismissHint();
+      spawnSpray(bug.position.clone());
+ 
+      killCount++; speedLevel++;
+      countEl.textContent = killCount;
+      speedEl.textContent = 'x' + Math.min(speedLevel,MAX_SPEED_LEVEL);
+ 
+      const deadBug = bug; bug = null;
+      const start = performance.now();
+      function drop(now){
+        const p = Math.min((now-start)/480,1);
+        deadBug.rotation.x = p*1.4;
+        deadBug.position.y -= p*0.6;
+        const s = Math.max(BUG_SCALE*(1-p),0.001);
+        deadBug.scale.set(s,s,s);
+        if(p<1){ requestAnimationFrame(drop); } else { scene.remove(deadBug); }
+      }
+      requestAnimationFrame(drop);
+ 
+      typeIndex = (typeIndex+1) % BUG_TYPES.length;
+      setTimeout(spawnBug, 420);
+    }
+ 
+    /* ---------- click / tap hit-test, capture phase so it beats page links ---------- */
+    function tryHit(clientX, clientY, ev){
+      if(!bug || !alive) return;
+      const dx = clientX - px, dy = clientY - py;
+      if(Math.sqrt(dx*dx+dy*dy) <= HIT_RADIUS){
+        ev.preventDefault();
+        ev.stopPropagation();
+        if(ev.stopImmediatePropagation) ev.stopImmediatePropagation();
+        killBug();
+      }
+    }
+    document.addEventListener('click', (e)=>tryHit(e.clientX, e.clientY, e), true);
+    document.addEventListener('touchstart', (e)=>{
+      if(!e.touches || !e.touches[0]) return;
+      tryHit(e.touches[0].clientX, e.touches[0].clientY, e);
+    }, { capture:true, passive:false });
+ 
+    /* ---------- animation loop ---------- */
+    let lastT = performance.now();
+    function animate(now){
+      requestAnimationFrame(animate);
+      const dt = Math.min((now-lastT)/1000, 0.05); lastT = now;
+ 
+      if(bug && alive){
+        const dx = tx-px, dy = ty-py, dist = Math.sqrt(dx*dx+dy*dy);
+        if(dist < 12){ pickTarget(); }
+        else{
+          const spd = currentSpeed();
+          px += (dx/dist) * spd * dt;
+          py += (dy/dist) * spd * dt;
+          const angle = Math.atan2(dx, dy);
+          bug.rotation.y += (angle - bug.rotation.y) * 0.12;
+        }
+        const bob = Math.abs(Math.sin(now*0.012)) * 3;
+        const wp = toWorld(px, py);
+        bug.position.set(wp.x, wp.y + bob, 0);
+      }
+ 
+      for(let i=activeSprays.length-1;i>=0;i--){
+        const s = activeSprays[i];
+        const age = now - s.userData.born;
+        if(age > 550){ sprayGroup.remove(s); activeSprays.splice(i,1); continue; }
+        s.position.addScaledVector(s.userData.vel,1);
+        s.userData.vel.y -= 0.25;
+        s.material.opacity = Math.max(0, 0.9 - age/550);
+      }
+ 
+      renderer.render(scene, camera);
+    }
+    requestAnimationFrame(animate);
+    spawnBug();
+ 
+    // auto-fade the hint after a while even if not caught yet
+    setTimeout(()=>{ if(!hintDismissed){ hint.style.opacity='0.35'; } }, 9000);
+ 
+    window.addEventListener('resize', ()=>{
+      w = window.innerWidth; h = window.innerHeight;
+      camera.left=-w/2; camera.right=w/2; camera.top=h/2; camera.bottom=-h/2;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w,h);
+    });
+  })();
+ 
+  /* ---------- form submit -> Telegram ---------- */
+  const form = document.getElementById('quoteForm');
+  const statusBox = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('submitBtn');
+ 
+  form.addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const data = new FormData(form);
+    const name = data.get('name');
+    const phone = data.get('phone');
+    const district = data.get('district');
+    const date = data.get('date') || 'Not specified';
+    const address = data.get('address') || 'Not specified';
+    const message = data.get('message') || 'None';
+    const pests = selectedPests.size ? Array.from(selectedPests).join(', ') : 'Not specified';
+ 
+    if(!name || !phone || !district){
+      showStatus('Please fill in name, phone and district.', 'err');
+      return;
+    }
+ 
+    const text =
+`🐜 *New Quotation Request*
+*Business:* Surya Koti Pest Control Services
+ 
+*Name:* ${name}
+*Phone:* ${phone}
+*District:* ${district}
+*Address:* ${address}
+*Preferred Date:* ${date}
+*Pest Type(s):* ${pests}
+*Message:* ${message}`;
+ 
+    if(CFG.telegramBotToken === "YOUR_BOT_TOKEN_HERE" || CFG.telegramChatId === "YOUR_CHAT_ID_HERE"){
+      showStatus('Form captured — but Telegram is not configured yet. Add your bot token & chat ID in the CONFIG section of this file.', 'err');
+      return;
+    }
+ 
+    submitBtn.textContent = 'Sending...'; submitBtn.disabled = true;
+    try{
+      const url = `https://api.telegram.org/bot${CFG.telegramBotToken}/sendMessage`;
+      const res = await fetch(url, {
+        method:'POST',
+        headers:{ 'Content-Type':'application/json' },
+        body: JSON.stringify({ chat_id: CFG.telegramChatId, text, parse_mode:'Markdown' })
+      });
+      const json = await res.json();
+      if(json.ok){
+        showStatus('Thank you! Your request has been sent. Our team will call you shortly.', 'ok');
+        form.reset();
+        document.querySelectorAll('.pest-opt').forEach(el=>el.classList.remove('active'));
+        selectedPests.clear();
+      } else {
+        throw new Error(json.description || 'Telegram API error');
+      }
+    } catch(err){
+      showStatus('Could not send automatically. Please call or WhatsApp us directly using the buttons above.', 'err');
+    } finally {
+      submitBtn.textContent = 'Send Quotation Request'; submitBtn.disabled = false;
+    }
+  });
+ 
+  function showStatus(msg, type){
+    statusBox.textContent = msg;
+    statusBox.className = 'form-status show ' + type;
+  }
+})();
+</script>
+</body>
+</html>
+ 
