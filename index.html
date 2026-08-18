@@ -1,19 +1,20 @@
-CTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Surya Koti Pest Control Services — Bihar's Trusted Pest Control</title>
+<link rel="icon" type="image/png" href="images/logo.png">
 <meta name="description" content="Surya Koti Pest Control Services — licensed termite, cockroach, mosquito, rodent, bed bug and godown pest control across Bihar. Free inspection, same-day booking.">
- 
+
 <!-- ===================== FONTS ===================== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
- 
+
 <!-- ===================== THREE.JS (hero particles) ===================== -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
- 
+
 <style>
 /* ============================================================
    TOKENS
@@ -31,16 +32,16 @@ CTYPE html>
   --amber-2:    #FFD23F;
   --ember:      #C1440E;
   --line:       rgba(243,239,224,0.14);
- 
+
   --display: 'Big Shoulders Display', sans-serif;
   --body:    'Work Sans', sans-serif;
   --mono:    'JetBrains Mono', monospace;
- 
+
   --container: 1180px;
   --radius: 14px;
   --ease: cubic-bezier(.16,.84,.44,1);
 }
- 
+
 *{ box-sizing:border-box; margin:0; padding:0; }
 html{ scroll-behavior:smooth; }
 body{
@@ -57,7 +58,7 @@ ul{ list-style:none; }
 button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
 input,select,textarea{ font-family:inherit; font-size:1rem; }
 ::selection{ background:var(--amber); color:var(--ink); }
- 
+
 .wrap{ max-width:var(--container); margin:0 auto; padding:0 28px; }
 .eyebrow{
   font-family:var(--mono); text-transform:uppercase; letter-spacing:.14em;
@@ -72,11 +73,11 @@ p{ color:rgba(243,239,224,0.72); }
 .section-head{ max-width:680px; margin-bottom:56px; }
 .section-head h2{ margin-top:14px; }
 .section-head p{ margin-top:16px; font-size:1.05rem; }
- 
+
 /* reveal-on-scroll */
 .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
 .reveal.in{ opacity:1; transform:translateY(0); }
- 
+
 /* ============================================================
    MADHUBANI-HAZARD SIGNATURE DIVIDER
    A hand-drawn Mithila fish-eye motif fused with a hazard chevron —
@@ -84,7 +85,7 @@ p{ color:rgba(243,239,224,0.72); }
    ============================================================ */
 .mh-divider{ width:100%; height:34px; overflow:hidden; opacity:.9; }
 .mh-divider svg{ width:100%; height:100%; display:block; }
- 
+
 /* ============================================================
    NAV
    ============================================================ */
@@ -96,7 +97,10 @@ p{ color:rgba(243,239,224,0.72); }
 }
 .nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:78px; }
 .brand{ display:flex; align-items:center; gap:12px; }
-.brand-mark{ width:40px; height:40px; flex:none; object-fit:cover; border-radius:8px; }
+.brand-mark{
+  width:42px; height:42px; flex:none; object-fit:cover; border-radius:50%;
+  background:#fff; box-shadow:0 0 0 1.5px rgba(242,183,5,.55);
+}
 .brand-text{ font-family:var(--display); font-weight:800; text-transform:uppercase; font-size:1.02rem; letter-spacing:.02em; line-height:1; }
 .brand-text span{ display:block; font-family:var(--mono); font-size:.6rem; letter-spacing:.16em; color:var(--amber); text-transform:uppercase; margin-top:4px; }
 .nav-links{ display:flex; gap:34px; align-items:center; }
@@ -118,7 +122,7 @@ p{ color:rgba(243,239,224,0.72); }
 .btn-sm{ padding:10px 18px; font-size:.76rem; }
 .nav-toggle{ display:none; width:34px; height:34px; }
 .nav-toggle span{ display:block; width:24px; height:2px; background:var(--paper); margin:6px auto; transition:.25s; }
- 
+
 /* ============================================================
    HERO
    ============================================================ */
@@ -174,7 +178,7 @@ p{ color:rgba(243,239,224,0.72); }
 }
 .hero-badge svg{ width:26px; height:26px; flex:none; color:var(--amber); }
 .hero-badge span{ font-family:var(--mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.05em; color:rgba(243,239,224,.65); }
- 
+
 /* 3D rotating shield badge */
 .hero-stage{ position:relative; height:460px; display:flex; align-items:center; justify-content:center; perspective:1200px; }
 .badge-3d{
@@ -202,11 +206,29 @@ p{ color:rgba(243,239,224,0.72); }
   animation:orbit 6s linear infinite;
 }
 .hero-stage-orbit.b{ animation-duration:9s; animation-direction:reverse; background:var(--ember); box-shadow:0 0 18px 4px rgba(193,68,14,.6); }
+
+/* real on-site photo, floated over the hero for instant recognition */
+.hero-photo-card{
+  position:absolute; right:64px; bottom:36px; z-index:3; width:190px;
+  background:var(--paper); padding:10px 10px 14px; border-radius:14px;
+  box-shadow:0 30px 60px -20px rgba(0,0,0,.65); transform:rotate(4deg);
+  transition:transform .35s var(--ease);
+}
+.hero-photo-card:hover{ transform:rotate(0deg) translateY(-4px); }
+.hero-photo-card img{ width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:8px; display:block; }
+.hero-photo-tag{
+  display:flex; align-items:center; gap:6px; margin-top:10px; padding:0 2px;
+  font-family:var(--mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.04em;
+  color:var(--ink); font-weight:700;
+}
+.hero-photo-tag svg{ width:12px; height:12px; color:var(--ember); flex:none; }
+@media (max-width:980px){ .hero-photo-card{ right:24px; bottom:-30px; width:150px; } }
+@media (max-width:720px){ .hero-photo-card{ display:none; } }
 @keyframes orbit{
   from{ transform:rotate(0deg) translateX(190px) rotate(0deg); }
   to{ transform:rotate(360deg) translateX(190px) rotate(-360deg); }
 }
- 
+
 /* ============================================================
    DISTRICT MARQUEE — hazard-stripe ticker
    ============================================================ */
@@ -222,39 +244,35 @@ p{ color:rgba(243,239,224,0.72); }
 }
 .marquee-track span::after{ content:"◆"; opacity:.5; font-size:.6rem; margin-left:26px; }
 @keyframes marquee{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
- 
-/* ============================================================
-   SITE-WIDE PEST HUNT — fixed overlay + HUD
-   ============================================================ */
-#bug-hunt-canvas{
-  position:fixed; inset:0; width:100vw; height:100vh;
-  z-index:70; pointer-events:none;
+
+/* ---------- global click spray splash (fires on any button click) ---------- */
+.spray-fx{ position:fixed; left:0; top:0; width:0; height:0; z-index:200; pointer-events:none; }
+.spray-fx .ring{
+  position:absolute; left:0; top:0; width:14px; height:14px; border-radius:50%;
+  background:radial-gradient(circle, rgba(242,183,5,.55), rgba(242,183,5,0) 70%);
+  transform:translate(-50%,-50%) scale(0); animation:sprayRing .5s ease-out forwards;
 }
-.bug-hud{
-  position:fixed; top:92px; right:18px; z-index:71;
-  display:flex; flex-direction:column; align-items:flex-end; gap:8px;
-  pointer-events:none;
+.spray-fx .drop{
+  position:absolute; left:0; top:0; width:6px; height:6px; border-radius:50%;
+  transform:translate(-50%,-50%); opacity:.95; animation:sprayDrop .55s ease-out forwards;
 }
-.bug-hud-badge{
-  font-family:var(--mono); font-size:.7rem; text-transform:uppercase; letter-spacing:.06em;
-  color:rgba(243,239,224,.88); background:rgba(15,27,20,.72); border:1px solid rgba(242,183,5,.4);
-  padding:9px 16px; border-radius:999px; backdrop-filter:blur(8px);
-  display:flex; align-items:center; gap:8px; white-space:nowrap;
+@keyframes sprayRing{ 0%{ transform:translate(-50%,-50%) scale(0); opacity:.9;} 100%{ transform:translate(-50%,-50%) scale(7); opacity:0;} }
+@keyframes sprayDrop{
+  0%{ transform:translate(-50%,-50%) translate(0,0) scale(1); opacity:.95;}
+  100%{ transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(.25); opacity:0;}
 }
-.bug-hunt-toggle{
-  background:rgba(243,239,224,0.04); color:var(--paper); border:1px solid rgba(243,239,224,0.06);
-  padding:8px 10px; border-radius:8px; font-family:var(--mono); font-size:.72rem; cursor:pointer;
-}
-.bug-hunt-toggle:hover{ background:rgba(242,183,5,0.06); }
-.bug-hud-badge strong{ color:var(--amber); }
-.bug-hunt-hint{ transition:opacity .5s, transform .5s; animation:hintPulse 2.2s ease-in-out infinite; }
-.bug-hunt-hint.hide{ opacity:0; transform:translateY(-8px); pointer-events:none; }
-@media (max-width:720px){ .bug-hud{ top:86px; right:12px; } .bug-hud-badge{ font-size:.62rem; padding:7px 12px; } }
- 
+
 /* ============================================================
    SERVICES
    ============================================================ */
 .services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+.services-intro{ display:grid; grid-template-columns:1.15fr .85fr; gap:50px; align-items:center; margin-bottom:56px; }
+.services-infographic{
+  border-radius:var(--radius); overflow:hidden; background:#F3EFE0;
+  border:1px solid var(--line); padding:10px;
+}
+.services-infographic img{ width:100%; height:auto; display:block; border-radius:8px; }
+@media (max-width:980px){ .services-intro{ grid-template-columns:1fr; } .services-infographic{ max-width:360px; margin:0 auto; } }
 .svc-card{
   position:relative; background:var(--pine-2); border:1px solid var(--line); border-radius:var(--radius);
   padding:34px 28px; transform-style:preserve-3d; transition:transform .12s linear, border-color .3s;
@@ -279,7 +297,7 @@ p{ color:rgba(243,239,224,0.72); }
   margin-top:20px; display:inline-block; font-family:var(--mono); font-size:.7rem;
   text-transform:uppercase; letter-spacing:.08em; color:var(--ember); transform:translateZ(14px);
 }
- 
+
 /* ============================================================
    PROCESS (real sequence — numbering justified)
    ============================================================ */
@@ -297,7 +315,7 @@ p{ color:rgba(243,239,224,0.72); }
 }
 .p-step h3{ font-size:1.15rem; }
 .p-step p{ margin-top:8px; font-size:.9rem; }
- 
+
 /* ============================================================
    STATS
    ============================================================ */
@@ -307,7 +325,7 @@ p{ color:rgba(243,239,224,0.72); }
 .stat:first-child{ border-left:none; }
 .stat .num{ font-family:var(--mono); font-size:clamp(2.1rem,4vw,3rem); font-weight:700; color:var(--amber); }
 .stat .lbl{ margin-top:8px; font-size:.78rem; text-transform:uppercase; letter-spacing:.08em; color:rgba(243,239,224,.6); }
- 
+
 /* ============================================================
    COVERAGE (districts)
    ============================================================ */
@@ -325,25 +343,33 @@ p{ color:rgba(243,239,224,0.72); }
   content:""; position:absolute; inset:-8px; border-radius:50%; border:1px solid var(--amber);
   animation:pulse 2.2s ease-out infinite;
 }
-.map-pulse-label{
-  position:absolute; top:-22px; left:50%; transform:translateX(-50%);
-  background:var(--pine-2); color:var(--paper); padding:6px 8px; border-radius:8px; font-family:var(--mono);
-  font-size:.72rem; white-space:nowrap; border:1px solid var(--line); pointer-events:none;
-}
-@media (max-width:720px){ .map-pulse-label{ display:none; } }
 @keyframes pulse{ 0%{ transform:scale(.4); opacity:1;} 100%{ transform:scale(2.4); opacity:0;} }
- 
+.map-pulse-label{
+  position:absolute; top:50%; left:16px; transform:translateY(-50%); white-space:nowrap;
+  font-family:var(--mono); font-size:.66rem; text-transform:uppercase; letter-spacing:.04em;
+  color:var(--paper); background:rgba(15,27,20,.85); border:1px solid rgba(242,183,5,.4);
+  padding:3px 9px; border-radius:999px; pointer-events:none;
+}
+.map-pulse-label.right{ left:auto; right:16px; }
+
 /* ============================================================
    WHY US
    ============================================================ */
 .why-grid{ display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+.why-photo{ position:relative; margin-top:34px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line); max-width:440px; }
+.why-photo img{ width:100%; height:auto; display:block; }
+.why-photo-tag{
+  position:absolute; left:14px; bottom:14px; padding:8px 14px; border-radius:999px;
+  background:rgba(15,27,20,.75); backdrop-filter:blur(6px); border:1px solid rgba(242,183,5,.4);
+  font-family:var(--mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--amber);
+}
 .why-list{ display:flex; flex-direction:column; gap:0; }
 .why-item{ display:flex; gap:20px; padding:24px 0; border-bottom:1px solid var(--line); }
 .why-item:first-child{ padding-top:0; }
 .why-item svg{ width:26px; height:26px; color:var(--amber); flex:none; margin-top:2px; }
 .why-item h3{ font-size:1.08rem; text-transform:none; font-family:var(--body); font-weight:700; }
 .why-item p{ margin-top:6px; font-size:.9rem; }
- 
+
 /* ============================================================
    TESTIMONIALS
    ============================================================ */
@@ -361,7 +387,7 @@ p{ color:rgba(243,239,224,0.72); }
   justify-content:center; font-family:var(--display); font-weight:700; font-size:.95rem; color:var(--amber);
 }
 .testi-who span{ display:block; font-size:.78rem; color:rgba(243,239,224,.55); font-family:var(--mono); }
- 
+
 /* ============================================================
    GALLERY
    ============================================================ */
@@ -382,7 +408,7 @@ p{ color:rgba(243,239,224,0.72); }
 }
 @media (max-width:980px){ .gallery-grid{ grid-template-columns:repeat(2,1fr); } }
 @media (max-width:520px){ .gallery-grid{ grid-template-columns:1fr 1fr; gap:12px; } }
- 
+
 /* ============================================================
    CLIENTS
    ============================================================ */
@@ -394,7 +420,7 @@ p{ color:rgba(243,239,224,0.72); }
 }
 .client-chip:hover{ border-color:rgba(242,183,5,.45); transform:translateY(-3px); }
 .client-chip svg{ width:18px; height:18px; color:var(--amber); flex:none; }
- 
+
 /* ============================================================
    MAP / LOCATION
    ============================================================ */
@@ -410,7 +436,7 @@ p{ color:rgba(243,239,224,0.72); }
   .map-section{ grid-template-columns:1fr; margin:0 16px; border-radius:20px; }
   .map-info{ padding:40px 26px; }
 }
- 
+
 /* ============================================================
    QUOTE / BOOKING FORM
    ============================================================ */
@@ -428,7 +454,7 @@ p{ color:rgba(243,239,224,0.72); }
 .quote-perks li{ display:flex; gap:12px; align-items:flex-start; font-size:.88rem; color:rgba(243,239,224,.82); }
 .quote-perks svg{ width:18px; height:18px; color:var(--amber); flex:none; margin-top:2px; }
 .quote-direct{ margin-top:40px; display:flex; gap:12px; flex-wrap:wrap; }
- 
+
 .quote-form{ padding:60px 56px; }
 .form-row{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 .field{ margin-bottom:18px; }
@@ -458,7 +484,7 @@ p{ color:rgba(243,239,224,0.72); }
 .form-status.show{ display:block; }
 .form-status.ok{ background:rgba(46,74,58,.12); color:#1e5c3a; }
 .form-status.err{ background:rgba(193,68,14,.12); color:#a33509; }
- 
+
 /* ============================================================
    CTA BANNER
    ============================================================ */
@@ -471,7 +497,7 @@ p{ color:rgba(243,239,224,0.72); }
 .cta-banner h2{ color:var(--ink); font-size:clamp(2rem,4vw,2.8rem); max-width:560px; }
 .cta-banner .btn-ghost{ border-color:rgba(15,27,20,.4); color:var(--ink); }
 .cta-banner .btn-ghost:hover{ border-color:var(--ink); background:rgba(15,27,20,.06); }
- 
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -483,7 +509,7 @@ footer{ padding:90px 0 34px; }
 .footer-col a:hover{ color:var(--amber); }
 .footer-bottom{ display:flex; justify-content:space-between; align-items:center; padding-top:28px; border-top:1px solid var(--line); font-size:.78rem; color:rgba(243,239,224,.45); flex-wrap:wrap; gap:12px; }
 .footer-bottom .mono{ font-family:var(--mono); }
- 
+
 /* ============================================================
    FLOATING ACTION BUTTONS
    ============================================================ */
@@ -503,7 +529,7 @@ footer{ padding:90px 0 34px; }
 }
 .fab-wrap{ position:relative; }
 .fab-wrap:hover .fab-label{ opacity:1; }
- 
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */
@@ -539,32 +565,15 @@ footer{ padding:90px 0 34px; }
 </style>
 </head>
 <body>
- 
-<!-- ============================================================
-     SITE-WIDE PEST HUNT — a bug roams the entire site.
-     Fixed overlay: stays on screen through every scroll position.
-     ============================================================ -->
-<canvas id="bug-hunt-canvas"></canvas>
-<div class="bug-hud" id="bugHud">
-  <div class="bug-hud-badge bug-hunt-hint" id="bugHuntHint">A pest is loose on the site — find &amp; click it</div>
-  <div style="display:flex; gap:8px; align-items:center;">
-    <button id="bugHuntToggle" class="bug-hunt-toggle">Disable Hunt</button>
-  </div>
-  <div class="bug-hud-badge">
-    <span>Eliminated <strong id="bugHudCount">0</strong></span>
-    <span style="opacity:.4;">/</span>
-    <span>Speed <strong id="bugHudSpeed">x1</strong></span>
-  </div>
-</div>
- 
- 
+
+
 <!-- ============================================================
      NAV
      ============================================================ -->
 <header class="nav">
   <div class="wrap">
     <a href="#top" class="brand">
-      <img src="logosk.jpeg" alt="Surya Koti Pest Control" class="brand-mark" />
+      <img class="brand-mark" src="images/logo.png" alt="Surya Koti Pest Control Services logo">
       <span class="brand-text">Surya Koti<span>Pest Control Services</span></span>
     </a>
     <nav class="nav-links">
@@ -580,7 +589,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </header>
- 
+
 <!-- ============================================================
      HERO
      ============================================================ -->
@@ -609,7 +618,7 @@ footer{ padding:90px 0 34px; }
         <div class="hero-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg><span>Same-Day Visit</span></div>
       </div>
     </div>
- 
+
     <div class="hero-stage">
       <div class="hero-stage-orbit"></div>
       <div class="hero-stage-orbit b"></div>
@@ -617,42 +626,60 @@ footer{ padding:90px 0 34px; }
       <div class="badge-3d">
         <div class="badge-face front">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-            <path d="M12 2 4 5.5v6c0 6 3.5 10.5 8 12 4.5-1.5 8-6 8-12v-6L12 2Z"/>
-            <path d="m9 12 2.2 2.2L15.5 10"/>
+            <!-- spray bottle: instantly reads as pest control -->
+            <path d="M9 3h3v2H9z" fill="currentColor" stroke="none"/>
+            <path d="M9.5 5h4l1 2h1.5a1 1 0 0 1 1 1v.3l2.3.7a1 1 0 0 1 .7 1v1a1 1 0 0 1-.7 1L17 12.3V19a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V8a1 1 0 0 1 1-1h1z"/>
+            <path d="M4 8c1 1.4 1 2.6 0 4M2.3 9.4c.8 1 .8 2.2 0 3.2M6 6.7c1.2 1.7 1.2 3.3 0 5"/>
           </svg>
         </div>
         <div class="badge-face back">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3">
-            <circle cx="12" cy="12" r="8"/>
-            <path d="M12 4v16M4 12h16" stroke-dasharray="1 4"/>
+            <!-- bug silhouette, struck through: the "no pests" mark -->
+            <ellipse cx="12" cy="13" rx="4" ry="5.5"/>
+            <path d="M12 8.2V6M9.3 8.6 7.5 6.8M14.7 8.6l1.8-1.8M7.6 12H4.5M19.5 12h-3.1M8 16l-3 2M16 16l3 2M8 9.5l-2.5-1M16 9.5l2.5-1"/>
+            <circle cx="12" cy="19" r=".4" fill="currentColor" stroke="none"/>
+            <path d="M4 20 20 4" stroke="var(--ember)" stroke-width="1.8"/>
           </svg>
         </div>
       </div>
     </div>
   </div>
+
+  <div class="hero-photo-card reveal">
+    <img src="images/gallery-1.jpg" alt="Surya Koti technician spraying a pest control treatment on-site">
+    <span class="hero-photo-tag">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+      Live Treatment In Progress
+    </span>
+  </div>
 </section>
- 
+
 <!-- district marquee -->
 <div class="marquee-strip">
   <div class="marquee-track" id="marqueeTrack"></div>
 </div>
- 
+
 <!-- ============================================================
      SERVICES
      ============================================================ -->
 <section class="section" id="services">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">What We Treat</div>
-      <h2>Six threats. One team that ends them.</h2>
-      <p>From a single termite line in the almirah to a full godown infestation — every treatment starts with a real inspection, not a guess.</p>
+    <div class="services-intro">
+      <div class="section-head reveal" style="margin-bottom:0;">
+        <div class="eyebrow">What We Treat</div>
+        <h2>Six threats. One team that ends them.</h2>
+        <p>From a single termite line in the almirah to a full godown infestation — every treatment starts with a real inspection, not a guess.</p>
+      </div>
+      <div class="services-infographic reveal">
+        <img src="images/pest-coverage-infographic.webp" alt="Diagram showing a home protected from termites, mosquitoes, flies, ants, rodents and other pests by Surya Koti's pest control services">
+      </div>
     </div>
     <div class="services-grid" id="servicesGrid"></div>
   </div>
 </section>
- 
+
 <div class="wrap"><div class="mh-divider" id="divider1"></div></div>
- 
+
 <!-- ============================================================
      PROCESS
      ============================================================ -->
@@ -670,7 +697,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      STATS
      ============================================================ -->
@@ -684,7 +711,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </div>
- 
+
 <!-- ============================================================
      COVERAGE
      ============================================================ -->
@@ -699,10 +726,13 @@ footer{ padding:90px 0 34px; }
           <path d="M50 60 C90 40 150 35 190 55 C230 70 260 100 255 140 C250 180 220 200 200 230 C180 260 140 270 110 250 C80 232 60 210 45 175 C30 140 20 90 50 60Z"
                 stroke="#F2B705" stroke-width="1.2" stroke-dasharray="4 5" opacity="0.55"/>
         </svg>
-        <div class="map-pulse" style="top:38%; left:44%;"><span class="map-pulse-label"></span></div>
-        <div class="map-pulse" style="top:58%; left:60%;"><span class="map-pulse-label"></span></div>
-        <div class="map-pulse" style="top:70%; left:35%;"><span class="map-pulse-label"></span></div>
-        <div class="map-pulse" style="top:30%; left:65%;"><span class="map-pulse-label"></span></div>
+        <div class="map-pulse" style="top:46%; left:40%;"><span class="map-pulse-label">Patna</span></div>
+        <div class="map-pulse" style="top:28%; left:58%;"><span class="map-pulse-label right">Muzaffarpur</span></div>
+        <div class="map-pulse" style="top:66%; left:30%;"><span class="map-pulse-label">Gaya</span></div>
+        <div class="map-pulse" style="top:38%; left:78%;"><span class="map-pulse-label right">Darbhanga</span></div>
+        <div class="map-pulse" style="top:60%; left:70%;"><span class="map-pulse-label right">Bhagalpur</span></div>
+        <div class="map-pulse" style="top:20%; left:34%;"><span class="map-pulse-label">Motihari</span></div>
+        <div class="map-pulse" style="top:78%; left:52%;"><span class="map-pulse-label">Aurangabad</span></div>
       </div>
     </div>
     <div class="reveal">
@@ -710,9 +740,9 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </section>
- 
+
 <div class="wrap"><div class="mh-divider" id="divider2"></div></div>
- 
+
 <!-- ============================================================
      WHY US
      ============================================================ -->
@@ -722,6 +752,10 @@ footer{ padding:90px 0 34px; }
       <div class="eyebrow">Why Surya Koti</div>
       <h2 style="margin-top:14px;">Pest control the way it should feel — thorough, honest, gone.</h2>
       <p style="margin-top:18px; max-width:420px;">No upsells at the doorstep, no vague spraying. Just a diagnosis, a plan, and a warranty we stand behind.</p>
+      <div class="why-photo">
+        <img src="images/professional-treatment.webp" alt="Surya Koti technician in full protective gear treating a cockroach infestation">
+        <span class="why-photo-tag">PPE-Certified Technicians</span>
+      </div>
     </div>
     <div class="why-list">
       <div class="why-item reveal">
@@ -743,7 +777,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      GALLERY
      ============================================================ -->
@@ -757,7 +791,7 @@ footer{ padding:90px 0 34px; }
     <div class="gallery-grid" id="galleryGrid"></div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      CLIENTS
      ============================================================ -->
@@ -770,7 +804,7 @@ footer{ padding:90px 0 34px; }
     <div class="clients-strip reveal" id="clientsStrip"></div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      TESTIMONIALS
      ============================================================ -->
@@ -783,7 +817,7 @@ footer{ padding:90px 0 34px; }
     <div class="testi-track" id="testiTrack"></div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      QUOTE FORM
      ============================================================ -->
@@ -804,7 +838,7 @@ footer{ padding:90px 0 34px; }
           <a href="#" class="btn btn-wa btn-sm" id="waBtnQuote">WhatsApp Now</a>
         </div>
       </div>
- 
+
       <form class="quote-form" id="quoteForm">
         <div class="form-row">
           <div class="field"><label for="fName">Full Name</label><input id="fName" name="name" type="text" placeholder="Your name" required></div>
@@ -822,7 +856,7 @@ footer{ padding:90px 0 34px; }
           <div class="pest-picker" id="pestPicker"></div>
         </div>
         <div class="field full"><label for="fMsg">Additional Details (optional)</label><textarea id="fMsg" name="message" placeholder="Tell us more — property type, severity, best time to call..."></textarea></div>
- 
+
         <button type="submit" class="btn btn-amber form-submit" id="submitBtn">Send Quotation Request</button>
         <p class="form-note">Submitting this form sends your details directly to our team on Telegram for immediate action.</p>
         <div class="form-status" id="formStatus"></div>
@@ -830,7 +864,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      CTA BANNER
      ============================================================ -->
@@ -843,7 +877,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      LOCATION / MAP
      ============================================================ -->
@@ -883,7 +917,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </section>
- 
+
 <!-- ============================================================
      FOOTER
      ============================================================ -->
@@ -892,11 +926,7 @@ footer{ padding:90px 0 34px; }
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#top" class="brand">
-          <svg class="brand-mark" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="22" stroke="#F2B705" stroke-width="2"/>
-            <path d="M24 10 L34 16 V26 C34 33 29.5 37.5 24 39 C18.5 37.5 14 33 14 26 V16 Z" fill="#2E4A3A" stroke="#F2B705" stroke-width="1.4"/>
-            <circle cx="24" cy="23" r="5.5" fill="#F2B705"/>
-          </svg>
+          <img class="brand-mark" src="images/logo.png" alt="Surya Koti Pest Control Services logo">
           <span class="brand-text">Surya Koti<span>Pest Control Services</span></span>
         </a>
         <p>Licensed pest management across Bihar — termite, cockroach, mosquito, rodent, bed bug and agricultural pest control for homes, offices and farms.</p>
@@ -930,7 +960,7 @@ footer{ padding:90px 0 34px; }
     </div>
   </div>
 </footer>
- 
+
 <!-- ============================================================
      FLOATING ACTION BUTTONS
      ============================================================ -->
@@ -948,7 +978,7 @@ footer{ padding:90px 0 34px; }
     </a>
   </div>
 </div>
- 
+
 <!-- ============================================================================================
      CONFIG — EDIT THESE VALUES FOR YOUR BUSINESS
      ============================================================================================ -->
@@ -957,15 +987,15 @@ window.SKPC_CONFIG = {
   // Phone number used for "Call Now" buttons — include country code, digits only after the plus.
   phoneDisplay: "+91 84346 60429",
   phoneTel: "+918434660429",
- 
+
   // WhatsApp number in international format WITHOUT + or spaces (e.g. 919000000000)
-  whatsappNumber: "918809999864",
+  whatsappNumber: "918434660429",
   whatsappPresetMessage: "Hi Surya Koti Pest Control, I'd like to book a pest inspection.",
- 
+
   email: "info@suryakotipestcontrol.in",
   address: "New Alakapuri Office, A/70, Patna, Gardani Bagh, Patna - 800001",
   hours: "Open 24x7 — Every Day",
- 
+
   // --- TELEGRAM NOTIFICATIONS ---
   // 1. Message @BotFather on Telegram -> /newbot -> copy the token it gives you below.
   // 2. Message your new bot once (any text), then visit:
@@ -978,11 +1008,11 @@ window.SKPC_CONFIG = {
   telegramChatId: "YOUR_CHAT_ID_HERE"
 };
 </script>
- 
+
 <script>
 (function(){
   const CFG = window.SKPC_CONFIG;
- 
+
   /* ---------- wire up call / whatsapp links ---------- */
   const telLink = "tel:" + CFG.phoneTel;
   const waLink = "https://wa.me/" + CFG.whatsappNumber + "?text=" + encodeURIComponent(CFG.whatsappPresetMessage);
@@ -1000,20 +1030,20 @@ window.SKPC_CONFIG = {
   const mh = document.getElementById('mapHours'); if(mh){ mh.textContent = CFG.hours; }
   const mp = document.getElementById('mapPhone'); if(mp){ mp.textContent = CFG.phoneDisplay; }
   document.getElementById('year').textContent = new Date().getFullYear();
- 
+
   /* ---------- data: districts ---------- */
   const DISTRICTS = ["Patna","Gaya","Bhagalpur","Muzaffarpur","Darbhanga","Purnia","Bhojpur (Ara)","Begusarai","Saran (Chapra)","Katihar","Munger","Samastipur","Rohtas (Sasaram)","Vaishali (Hajipur)","Siwan","East Champaran (Motihari)","West Champaran (Bettiah)","Nawada","Jehanabad","Buxar","Kishanganj","Araria","Madhubani","Sitamarhi","Nalanda (Bihar Sharif)","Aurangabad","Banka","Supaul"];
- 
+
   const chipsWrap = document.getElementById('districtChips');
   DISTRICTS.forEach(d=>{ const c=document.createElement('span'); c.className='chip'; c.textContent=d; chipsWrap.appendChild(c); });
- 
+
   const marquee = document.getElementById('marqueeTrack');
   const marqueeItems = DISTRICTS.concat(DISTRICTS).map(d=>{ const s=document.createElement('span'); s.textContent=d; return s; });
   marqueeItems.forEach(el=>marquee.appendChild(el));
- 
+
   const districtSelect = document.getElementById('fDistrict');
   DISTRICTS.forEach(d=>{ const o=document.createElement('option'); o.value=d; o.textContent=d; districtSelect.appendChild(o); });
- 
+
   /* ---------- data: services ---------- */
   const SERVICES = [
     { name:"Termite Control", tag:"Anti-Termite Treatment", desc:"Pre &amp; post-construction soil treatment plus targeted foam injection for active termite lines in furniture and structures.",
@@ -1036,7 +1066,7 @@ window.SKPC_CONFIG = {
       <h3>${s.name}</h3><p>${s.desc}</p><span class="svc-tag">${s.tag}</span>`;
     svcGrid.appendChild(card);
   });
- 
+
   /* ---------- data: testimonials ---------- */
   const TESTIMONIALS = [
     { name:"Ravi Kumar", loc:"Patna", text:"Termite problem in our almirah was gone within a week of treatment. The technician showed us exactly where the colony was entering." },
@@ -1051,26 +1081,23 @@ window.SKPC_CONFIG = {
       <div class="testi-who"><div class="testi-avatar">${t.name.charAt(0)}</div><div><strong style="font-size:.9rem;">${t.name}</strong><span>${t.loc}, Bihar</span></div></div>`;
     testiTrack.appendChild(card);
   });
- 
-  /* ---------- gallery (auto-populated from workspace images) ---------- */
-  const IMAGE_FILES = [
-    "logosk.jpeg",
-    "pest1.jpeg",
-    "pest 2.jpeg",
-    "pest 3.jpeg",
-    "pest4.jpeg"
+
+  /* ---------- gallery ---------- */
+  const GALLERY = [
+    { src:"images/gallery-1.jpg", caption:"Washroom sanitization treatment" },
+    { src:"images/gallery-2.jpg", caption:"Banquet hall pest treatment" },
+    { src:"images/gallery-3.jpg", caption:"Office floor spray treatment" },
+    { src:"images/gallery-4.jpg", caption:"Seating area pest control" }
   ];
   const galleryGrid = document.getElementById('galleryGrid');
   if(galleryGrid){
-    // exclude the logo file from the gallery
-    const GALLERY = IMAGE_FILES.filter(f => f.toLowerCase() !== 'logosk.jpeg').map((f,i)=>({ src: encodeURI(f), caption: `Visit photo ${i+1}` }));
     GALLERY.forEach(item=>{
       const el = document.createElement('div'); el.className = 'gallery-item reveal';
       el.innerHTML = `<img src="${item.src}" alt="${item.caption}" loading="lazy"><div class="gallery-caption">${item.caption}</div>`;
       galleryGrid.appendChild(el);
     });
   }
- 
+
   /* ---------- regular clients ---------- */
   const CLIENTS = [
     "Red Velvet Hotel", "Samarpan", "Dhaba 1986", "Restaurant Partner",
@@ -1084,7 +1111,7 @@ window.SKPC_CONFIG = {
       clientsStrip.appendChild(c);
     });
   }
- 
+
   /* ---------- pest picker chips ---------- */
   const PEST_TYPES = ["Termite","Cockroach","Mosquito","Rodent","Bed Bug","Ant","General Household","Agricultural / Godown"];
   const pestPicker = document.getElementById('pestPicker');
@@ -1098,7 +1125,7 @@ window.SKPC_CONFIG = {
     });
     pestPicker.appendChild(label);
   });
- 
+
   /* ---------- Madhubani-hazard signature divider (repeating SVG motif) ---------- */
   function buildDivider(el){
     if(!el) return;
@@ -1116,13 +1143,13 @@ window.SKPC_CONFIG = {
     el.innerHTML = `<svg viewBox="0 0 ${unit*count} 34" preserveAspectRatio="none">${paths}</svg>`;
   }
   ['divider1','divider2','divider3'].forEach(id=>buildDivider(document.getElementById(id)));
- 
+
   /* ---------- scroll reveal ---------- */
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
   }, { threshold:0.15 });
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
- 
+
   /* ---------- count-up stats ---------- */
   const statEls = document.querySelectorAll('.stat .num');
   const statIO = new IntersectionObserver((entries)=>{
@@ -1142,7 +1169,7 @@ window.SKPC_CONFIG = {
     });
   }, { threshold:0.4 });
   statEls.forEach(el=>statIO.observe(el));
- 
+
   /* ---------- 3D tilt on service cards ---------- */
   document.addEventListener('mousemove', (e)=>{
     document.querySelectorAll('.svc-card').forEach(card=>{
@@ -1161,22 +1188,22 @@ window.SKPC_CONFIG = {
   document.querySelectorAll('.svc-card').forEach(card=>{
     card.addEventListener('mouseleave', ()=>{ card.style.transform='rotateY(0deg) rotateX(0deg)'; });
   });
- 
+
   /* ---------- Three.js hero particle swarm ---------- */
   (function initHeroCanvas(){
     const canvas = document.getElementById('hero-canvas');
     if(!canvas || typeof THREE === 'undefined') return;
     const heroEl = document.querySelector('.hero');
     let w = heroEl.clientWidth, h = heroEl.clientHeight;
- 
+
     const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
     renderer.setSize(w,h);
- 
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(55, w/h, 0.1, 100);
     camera.position.z = 18;
- 
+
     const COUNT = 140;
     const geo = new THREE.BufferGeometry();
     const positions = new Float32Array(COUNT*3);
@@ -1188,11 +1215,11 @@ window.SKPC_CONFIG = {
       speeds[i] = 0.15 + Math.random()*0.35;
     }
     geo.setAttribute('position', new THREE.BufferAttribute(positions,3));
- 
+
     const mat = new THREE.PointsMaterial({ color:0xF2B705, size:0.11, transparent:true, opacity:0.75 });
     const points = new THREE.Points(geo, mat);
     scene.add(points);
- 
+
     // faint ember-colored secondary layer
     const geo2 = new THREE.BufferGeometry();
     const positions2 = new Float32Array(60*3);
@@ -1205,13 +1232,13 @@ window.SKPC_CONFIG = {
     const mat2 = new THREE.PointsMaterial({ color:0xC1440E, size:0.07, transparent:true, opacity:0.5 });
     const points2 = new THREE.Points(geo2, mat2);
     scene.add(points2);
- 
+
     let mouseX = 0, mouseY = 0;
     window.addEventListener('mousemove', (e)=>{
       mouseX = (e.clientX / window.innerWidth - 0.5);
       mouseY = (e.clientY / window.innerHeight - 0.5);
     });
- 
+
     function animate(){
       requestAnimationFrame(animate);
       const pos = geo.attributes.position.array;
@@ -1228,307 +1255,45 @@ window.SKPC_CONFIG = {
       renderer.render(scene, camera);
     }
     animate();
- 
+
     window.addEventListener('resize', ()=>{
       w = heroEl.clientWidth; h = heroEl.clientHeight;
       camera.aspect = w/h; camera.updateProjectionMatrix();
       renderer.setSize(w,h);
     });
   })();
- 
-  /* ============================================================
-     SITE-WIDE PEST HUNT — bug roams the entire viewport as a
-     fixed overlay. Click it anywhere to spray it; speed +1 per kill.
-     ============================================================ */
-    // ---------- Bug hunt toggle & map-pulse labels ----------
-    (function(){
-      const toggleBtn = document.getElementById('bugHuntToggle');
-      const stored = localStorage.getItem('bugHunt') || 'on';
-      if(toggleBtn){
-        toggleBtn.textContent = stored === 'on' ? 'Disable Hunt' : 'Enable Hunt';
-        toggleBtn.addEventListener('click', ()=>{
-          const next = (localStorage.getItem('bugHunt')==='on') ? 'off' : 'on';
-          localStorage.setItem('bugHunt', next);
-          location.reload();
-        });
-      }
-      if(stored === 'off'){
-        const canvas = document.getElementById('bug-hunt-canvas'); if(canvas) canvas.style.display='none';
-        const hint = document.getElementById('bugHuntHint'); if(hint) hint.textContent = 'Pest hunt is disabled';
-      }
 
-      // populate labels for map pulses using DISTRICTS (if present)
-      try{
-        if(typeof DISTRICTS !== 'undefined'){
-          const pulses = document.querySelectorAll('.map-pulse');
-          pulses.forEach((p,i)=>{
-            const name = DISTRICTS[i] || DISTRICTS[i % DISTRICTS.length] || '';
-            const lbl = p.querySelector('.map-pulse-label');
-            if(lbl) lbl.textContent = name;
-            p.title = name;
-            p.addEventListener('mouseenter', ()=>{
-              const chips = Array.from(document.querySelectorAll('.chip'));
-              chips.forEach(c=> c.style.transform = (c.textContent === name) ? 'translateY(-4px) scale(1.02)' : '');
-            });
-            p.addEventListener('mouseleave', ()=>{ const chips = document.querySelectorAll('.chip'); chips.forEach(c=> c.style.transform=''); });
-          });
-        }
-      }catch(e){ console.warn('pulse label setup failed', e); }
-    })();
-  (function initBugHunt(){
-    const canvas = document.getElementById('bug-hunt-canvas');
-    if(!canvas || typeof THREE === 'undefined') return;
-    const hint = document.getElementById('bugHuntHint');
-    const countEl = document.getElementById('bugHudCount');
-    const speedEl = document.getElementById('bugHudSpeed');
- 
-    let w = window.innerWidth, h = window.innerHeight;
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
-    renderer.setSize(w,h);
- 
-    const scene = new THREE.Scene();
-    const camera = new THREE.OrthographicCamera(-w/2, w/2, h/2, -h/2, -1000, 1000);
-    camera.position.set(0,0,500);
-    camera.lookAt(0,0,0);
- 
-    scene.add(new THREE.HemisphereLight(0xF3EFE0, 0x0F1B14, 1.0));
-    const key = new THREE.DirectionalLight(0xffffff, 1.0);
-    key.position.set(200,400,600); scene.add(key);
-    const rim = new THREE.PointLight(0xF2B705, 0.7, 0); rim.position.set(-300,200,300); scene.add(rim);
- 
-    function toWorld(px,py){ return new THREE.Vector3(px - w/2, h/2 - py, 0); }
- 
-    /* ---------- bug builders (same species as before) ---------- */
-    function mat(color, opts){ return new THREE.MeshStandardMaterial(Object.assign({ color, roughness:0.55, metalness:0.05 }, opts||{})); }
-    function leg(len, r, color){ const g=new THREE.CylinderGeometry(r,r*0.7,len,6); const m=new THREE.Mesh(g,mat(color)); m.geometry.translate(0,-len/2,0); return m; }
-    function addLegs(group,n,color,spread,len,yBase){
-      for(let i=0;i<n;i++){
-        const side=i%2===0?1:-1, row=Math.floor(i/2);
-        const l=leg(len,0.018,color);
-        l.position.set(side*spread,yBase,0.12-row*0.14); l.rotation.z=side*0.6;
-        group.add(l);
-      }
-    }
-    function eyes(group,color,r,offsetX,y,z){ [-1,1].forEach(s=>{ const e=new THREE.Mesh(new THREE.SphereGeometry(r,8,8),mat(color,{roughness:0.2})); e.position.set(s*offsetX,y,z); group.add(e); }); }
-    function antenna(group,color,x,y,z,rotZ){ const a=leg(0.5,0.012,color); a.position.set(x,y,z); a.rotation.z=rotZ; a.rotation.x=-0.4; group.add(a); }
- 
-    function buildTermite(){
-      const g=new THREE.Group();
-      const body=new THREE.Mesh(new THREE.SphereGeometry(0.26,16,16),mat(0xD8C08A)); body.scale.set(1,0.72,1.5); body.position.y=0.22; g.add(body);
-      const head=new THREE.Mesh(new THREE.SphereGeometry(0.13,12,12),mat(0xC9A85E)); head.position.set(0,0.24,0.34); g.add(head);
-      eyes(g,0x2b1d0a,0.025,0.06,0.27,0.42);
-      antenna(g,0xC9A85E,0.07,0.3,0.4,0.3); antenna(g,0xC9A85E,-0.07,0.3,0.4,-0.3);
-      [-0.22,0.22].forEach(s=>{ const wing=new THREE.Mesh(new THREE.PlaneGeometry(0.16,0.42),mat(0xEDE3C6,{transparent:true,opacity:0.55,side:THREE.DoubleSide})); wing.position.set(s,0.3,-0.05); wing.rotation.y=s>0?0.5:-0.5; g.add(wing); });
-      addLegs(g,6,0xB8935A,0.24,0.22,0.14);
-      return g;
-    }
-    function buildCockroach(){
-      const g=new THREE.Group();
-      const body=new THREE.Mesh(new THREE.SphereGeometry(0.28,16,16),mat(0x5A2E1A)); body.scale.set(1,0.5,1.7); body.position.y=0.16; g.add(body);
-      const head=new THREE.Mesh(new THREE.SphereGeometry(0.11,10,10),mat(0x3D1E10)); head.position.set(0,0.17,0.42); g.add(head);
-      eyes(g,0x0a0605,0.02,0.05,0.19,0.47);
-      antenna(g,0x3D1E10,0.06,0.22,0.5,0.5); antenna(g,0x3D1E10,-0.06,0.22,0.5,-0.5);
-      addLegs(g,6,0x2E160B,0.28,0.26,0.1);
-      return g;
-    }
-    function buildMosquito(){
-      const g=new THREE.Group();
-      const body=new THREE.Mesh(new THREE.SphereGeometry(0.09,10,10),mat(0x8A8F86)); body.scale.set(1,1,2.4); body.position.y=0.38; g.add(body);
-      const proboscis=leg(0.22,0.012,0x3A3F38); proboscis.rotation.x=1.5; proboscis.position.set(0,0.4,0.5); g.add(proboscis);
-      [-0.18,0.18].forEach(s=>{ const wing=new THREE.Mesh(new THREE.PlaneGeometry(0.3,0.14),mat(0xE9EAE4,{transparent:true,opacity:0.4,side:THREE.DoubleSide})); wing.position.set(s,0.46,0.05); wing.rotation.y=s>0?-0.3:0.3; wing.rotation.z=s>0?-0.2:0.2; g.add(wing); });
-      addLegs(g,6,0x6B6F64,0.14,0.42,0.3);
-      return g;
-    }
-    function buildRodent(){
-      const g=new THREE.Group();
-      const body=new THREE.Mesh(new THREE.SphereGeometry(0.32,16,16),mat(0x8C8C88)); body.scale.set(1,0.85,1.5); body.position.y=0.28; g.add(body);
-      const head=new THREE.Mesh(new THREE.SphereGeometry(0.17,12,12),mat(0x84837E)); head.position.set(0,0.3,0.48); g.add(head);
-      eyes(g,0x100f0d,0.028,0.08,0.33,0.56);
-      [-0.11,0.11].forEach(s=>{ const ear=new THREE.Mesh(new THREE.CircleGeometry(0.08,12),mat(0x6d6a63,{side:THREE.DoubleSide})); ear.position.set(s,0.44,0.4); g.add(ear); });
-      const tail=leg(0.7,0.03,0xA79F91); tail.rotation.x=1.7; tail.rotation.z=0.4; tail.position.set(0,0.16,-0.5); g.add(tail);
-      addLegs(g,4,0x6d6a63,0.26,0.24,0.14);
-      return g;
-    }
-    function buildBedbug(){
-      const g=new THREE.Group();
-      const body=new THREE.Mesh(new THREE.SphereGeometry(0.24,16,16),mat(0x8C3A2B)); body.scale.set(1,0.34,1.15); body.position.y=0.1; g.add(body);
-      const head=new THREE.Mesh(new THREE.SphereGeometry(0.09,10,10),mat(0x6E2A1E)); head.position.set(0,0.11,0.28); g.add(head);
-      antenna(g,0x6E2A1E,0.05,0.15,0.32,0.35); antenna(g,0x6E2A1E,-0.05,0.15,0.32,-0.35);
-      addLegs(g,6,0x5A2118,0.2,0.14,0.06);
-      return g;
-    }
-    function buildAnt(){
-      const g=new THREE.Group();
-      const abdomen=new THREE.Mesh(new THREE.SphereGeometry(0.16,14,14),mat(0x1B1B1B)); abdomen.position.set(0,0.2,-0.22); g.add(abdomen);
-      const thorax=new THREE.Mesh(new THREE.SphereGeometry(0.1,12,12),mat(0x232323)); thorax.position.set(0,0.2,0.03); g.add(thorax);
-      const head=new THREE.Mesh(new THREE.SphereGeometry(0.1,12,12),mat(0x1B1B1B)); head.position.set(0,0.21,0.27); g.add(head);
-      eyes(g,0x000000,0.02,0.055,0.23,0.32);
-      antenna(g,0x1B1B1B,0.05,0.3,0.32,0.4); antenna(g,0x1B1B1B,-0.05,0.3,0.32,-0.4);
-      addLegs(g,6,0x141414,0.18,0.24,0.14);
-      return g;
-    }
- 
-    const BUG_TYPES = [
-      { build:buildTermite }, { build:buildCockroach }, { build:buildMosquito },
-      { build:buildRodent }, { build:buildBedbug }, { build:buildAnt }
-    ];
-    const BUG_SCALE = 150;      // world unit -> pixel scale
-    const HIT_RADIUS = 46;      // px, generous click target
-    const BASE_SPEED = 70;      // px/sec at speed level 1
-    const SPEED_STEP = 22;      // px/sec added per kill
-    const MAX_SPEED_LEVEL = 22; // soft cap so it stays killable
- 
-    let typeIndex = 0, killCount = 0, speedLevel = 1, isBusy = false;
-    let bug = null, alive = false;
-    let px = w/2, py = h/2, tx = w/2, ty = h/2;
-    const NAV_H = 100, MARGIN = 40;
-    const sprayGroup = new THREE.Group(); scene.add(sprayGroup);
-    const activeSprays = [];
-    let hintDismissed = false;
- 
-    function bounds(){ return { minX:MARGIN, maxX:w-MARGIN, minY:NAV_H, maxY:h-MARGIN }; }
-    function pickTarget(){ const b=bounds(); tx = b.minX+Math.random()*(b.maxX-b.minX); ty = b.minY+Math.random()*(b.maxY-b.minY); }
- 
-    function currentSpeed(){ return BASE_SPEED + (Math.min(speedLevel,MAX_SPEED_LEVEL)-1)*SPEED_STEP; }
- 
-    function spawnBug(){
-      const def = BUG_TYPES[typeIndex];
-      bug = def.build();
-      bug.scale.set(0.001,0.001,0.001);
-      const b = bounds();
-      px = b.minX + Math.random()*(b.maxX-b.minX);
-      py = b.minY + Math.random()*(b.maxY-b.minY);
-      bug.position.copy(toWorld(px,py));
-      scene.add(bug);
-      pickTarget();
-      alive = true; isBusy = false;
- 
-      const start = performance.now();
-      function grow(now){
-        const p = Math.min((now-start)/340,1);
-        const s = (1-Math.pow(1-p,3)) * BUG_SCALE;
-        bug.scale.set(s,s,s);
-        if(p<1) requestAnimationFrame(grow);
-      }
-      requestAnimationFrame(grow);
-    }
- 
-    function spawnSpray(worldPoint){
-      const N = 28;
+  /* ---------- global click spray-splash on any button/interactive element ---------- */
+  (function initClickSpray(){
+    function spraySplash(x,y){
+      const wrap = document.createElement('div');
+      wrap.className = 'spray-fx';
+      wrap.style.left = x+'px'; wrap.style.top = y+'px';
+      const ring = document.createElement('div'); ring.className = 'ring'; wrap.appendChild(ring);
+      const N = 10;
       for(let i=0;i<N;i++){
-        const s = new THREE.Mesh(
-          new THREE.SphereGeometry(4+Math.random()*3,6,6),
-          new THREE.MeshBasicMaterial({ color: Math.random()>0.5?0xEAF6F0:0xF2B705, transparent:true, opacity:0.9 })
-        );
-        s.position.copy(worldPoint);
-        const ang = Math.random()*Math.PI*2, spd = 2+Math.random()*5;
-        s.userData.vel = new THREE.Vector3(Math.cos(ang)*spd, 3+Math.random()*6, Math.sin(ang)*spd*0.4);
-        s.userData.born = performance.now();
-        sprayGroup.add(s); activeSprays.push(s);
+        const d = document.createElement('div'); d.className = 'drop';
+        const ang = Math.random()*Math.PI*2, dist = 18+Math.random()*32;
+        d.style.setProperty('--dx', Math.cos(ang)*dist+'px');
+        d.style.setProperty('--dy', Math.sin(ang)*dist+'px');
+        d.style.background = Math.random()>0.5 ? '#F2B705' : '#EAF6F0';
+        d.style.animationDelay = (Math.random()*0.06)+'s';
+        wrap.appendChild(d);
       }
+      document.body.appendChild(wrap);
+      setTimeout(()=>wrap.remove(), 700);
     }
- 
-    function dismissHint(){
-      if(hintDismissed) return;
-      hintDismissed = true;
-      hint.classList.add('hide');
-    }
- 
-    function killBug(){
-      if(!bug || !alive || isBusy) return;
-      isBusy = true; alive = false;
-      dismissHint();
-      spawnSpray(bug.position.clone());
- 
-      killCount++; speedLevel++;
-      countEl.textContent = killCount;
-      speedEl.textContent = 'x' + Math.min(speedLevel,MAX_SPEED_LEVEL);
- 
-      const deadBug = bug; bug = null;
-      const start = performance.now();
-      function drop(now){
-        const p = Math.min((now-start)/480,1);
-        deadBug.rotation.x = p*1.4;
-        deadBug.position.y -= p*0.6;
-        const s = Math.max(BUG_SCALE*(1-p),0.001);
-        deadBug.scale.set(s,s,s);
-        if(p<1){ requestAnimationFrame(drop); } else { scene.remove(deadBug); }
-      }
-      requestAnimationFrame(drop);
- 
-      typeIndex = (typeIndex+1) % BUG_TYPES.length;
-      setTimeout(spawnBug, 420);
-    }
- 
-    /* ---------- click / tap hit-test, capture phase so it beats page links ---------- */
-    function tryHit(clientX, clientY, ev){
-      if(!bug || !alive) return;
-      const dx = clientX - px, dy = clientY - py;
-      if(Math.sqrt(dx*dx+dy*dy) <= HIT_RADIUS){
-        ev.preventDefault();
-        ev.stopPropagation();
-        if(ev.stopImmediatePropagation) ev.stopImmediatePropagation();
-        killBug();
-      }
-    }
-    document.addEventListener('click', (e)=>tryHit(e.clientX, e.clientY, e), true);
-    document.addEventListener('touchstart', (e)=>{
-      if(!e.touches || !e.touches[0]) return;
-      tryHit(e.touches[0].clientX, e.touches[0].clientY, e);
-    }, { capture:true, passive:false });
- 
-    /* ---------- animation loop ---------- */
-    let lastT = performance.now();
-    function animate(now){
-      requestAnimationFrame(animate);
-      const dt = Math.min((now-lastT)/1000, 0.05); lastT = now;
- 
-      if(bug && alive){
-        const dx = tx-px, dy = ty-py, dist = Math.sqrt(dx*dx+dy*dy);
-        if(dist < 12){ pickTarget(); }
-        else{
-          const spd = currentSpeed();
-          px += (dx/dist) * spd * dt;
-          py += (dy/dist) * spd * dt;
-          const angle = Math.atan2(dx, dy);
-          bug.rotation.y += (angle - bug.rotation.y) * 0.12;
-        }
-        const bob = Math.abs(Math.sin(now*0.012)) * 3;
-        const wp = toWorld(px, py);
-        bug.position.set(wp.x, wp.y + bob, 0);
-      }
- 
-      for(let i=activeSprays.length-1;i>=0;i--){
-        const s = activeSprays[i];
-        const age = now - s.userData.born;
-        if(age > 550){ sprayGroup.remove(s); activeSprays.splice(i,1); continue; }
-        s.position.addScaledVector(s.userData.vel,1);
-        s.userData.vel.y -= 0.25;
-        s.material.opacity = Math.max(0, 0.9 - age/550);
-      }
- 
-      renderer.render(scene, camera);
-    }
-    requestAnimationFrame(animate);
-    spawnBug();
- 
-    // auto-fade the hint after a while even if not caught yet
-    setTimeout(()=>{ if(!hintDismissed){ hint.style.opacity='0.35'; } }, 9000);
- 
-    window.addEventListener('resize', ()=>{
-      w = window.innerWidth; h = window.innerHeight;
-      camera.left=-w/2; camera.right=w/2; camera.top=h/2; camera.bottom=-h/2;
-      camera.updateProjectionMatrix();
-      renderer.setSize(w,h);
+    document.addEventListener('click', (e)=>{
+      const target = e.target.closest('.btn, .fab, button, .pest-opt, .chip, .client-chip');
+      if(target){ spraySplash(e.clientX, e.clientY); }
     });
   })();
- 
+
   /* ---------- form submit -> Telegram ---------- */
   const form = document.getElementById('quoteForm');
   const statusBox = document.getElementById('formStatus');
   const submitBtn = document.getElementById('submitBtn');
- 
+
   form.addEventListener('submit', async (e)=>{
     e.preventDefault();
     const data = new FormData(form);
@@ -1539,16 +1304,16 @@ window.SKPC_CONFIG = {
     const address = data.get('address') || 'Not specified';
     const message = data.get('message') || 'None';
     const pests = selectedPests.size ? Array.from(selectedPests).join(', ') : 'Not specified';
- 
+
     if(!name || !phone || !district){
       showStatus('Please fill in name, phone and district.', 'err');
       return;
     }
- 
+
     const text =
 `🐜 *New Quotation Request*
 *Business:* Surya Koti Pest Control Services
- 
+
 *Name:* ${name}
 *Phone:* ${phone}
 *District:* ${district}
@@ -1556,12 +1321,12 @@ window.SKPC_CONFIG = {
 *Preferred Date:* ${date}
 *Pest Type(s):* ${pests}
 *Message:* ${message}`;
- 
+
     if(CFG.telegramBotToken === "YOUR_BOT_TOKEN_HERE" || CFG.telegramChatId === "YOUR_CHAT_ID_HERE"){
       showStatus('Form captured — but Telegram is not configured yet. Add your bot token & chat ID in the CONFIG section of this file.', 'err');
       return;
     }
- 
+
     submitBtn.textContent = 'Sending...'; submitBtn.disabled = true;
     try{
       const url = `https://api.telegram.org/bot${CFG.telegramBotToken}/sendMessage`;
@@ -1585,7 +1350,7 @@ window.SKPC_CONFIG = {
       submitBtn.textContent = 'Send Quotation Request'; submitBtn.disabled = false;
     }
   });
- 
+
   function showStatus(msg, type){
     statusBox.textContent = msg;
     statusBox.className = 'form-status show ' + type;
@@ -1594,4 +1359,3 @@ window.SKPC_CONFIG = {
 </script>
 </body>
 </html>
- 
